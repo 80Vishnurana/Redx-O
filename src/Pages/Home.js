@@ -6,7 +6,6 @@ import { useTheme, styled } from '@mui/material/styles';
 import images from "../core/config/homePage/SliderImages";
 import cards from "../core/config/homePage/FeatureCards";
 import { section } from "../core/config/homePage/FeatureCards";
-
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -76,7 +75,7 @@ const Home = () => {
                             padding={'50px'}
                         >
                             <Typography variant="h3" sx={{ color: `${theme.palette.common.white}` }}>{slide.text}</Typography>
-                            <hr/>
+                            <hr />
                             <Typography variant="body1" sx={{ color: `${theme.palette.common.white}` }}>{slide.cta}</Typography>
                         </Grid>
 
@@ -129,6 +128,8 @@ const Home = () => {
                                     sx={{
                                         // 16:9
                                         pt: '56.25%',
+
+
                                     }}
                                     image={card.img}
                                 />
