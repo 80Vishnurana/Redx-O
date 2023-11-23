@@ -1,0 +1,8 @@
+.products-grid {
+  transition: box-shadow 0.5s ease;
+  overflow: hidden;
+}
+
+.products-grid.selected {
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}

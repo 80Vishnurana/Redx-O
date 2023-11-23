@@ -13,6 +13,8 @@
     "react-pageflip": "^2.0.3",
     "react-router-dom": "^6.19.0",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.7.3",
+    "react-transition-group": "^4.4.5",
     "swiper": "^11.0.4",
     "web-vitals": "^2.1.0"
   },
