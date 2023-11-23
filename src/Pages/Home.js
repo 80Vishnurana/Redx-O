@@ -2,17 +2,17 @@ import React from "react";
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { Grid, Typography, Box, Stack } from "@mui/material";
-import { useTheme, styled } from '@mui/material/styles';
+import { useTheme, styled, duration } from '@mui/material/styles';
 import images from "../core/config/homePage/SliderImages";
 import cards from "../core/config/homePage/FeatureCards";
 import { section } from "../core/config/homePage/FeatureCards";
-
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
+import data from "../core/config/homePage/whatWeDo";
 
 
 register();
@@ -44,9 +44,20 @@ const Home = () => {
 
     const StyledCard = styled(Card)(({ theme }) => ({
         '&:hover': {
-            boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
+            boxShadow: `0 10px 20px ${theme.palette.primary.main}50`, // Add a box shadow on hover
             transform: 'scale(1.05)', // Increase size on hover
             transition: '0.3s ease-in-out', // Add a smooth transition effect
+        },
+    }));
+    const StyledBox = styled(Box)(({ theme }) => ({
+        height:'450px',
+        width:'500px',
+        border:'1px solid red',
+        '&:hover': {
+            boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
+            transform: 'scale(1.05)', // Increase size on hover
+            transition: '0.3s ease-in-out', // Add a smooth transition effect        
+            transitionDuration: '0.5s',
         },
     }));
 
@@ -76,7 +87,7 @@ const Home = () => {
                             padding={'50px'}
                         >
                             <Typography variant="h3" sx={{ color: `${theme.palette.common.white}` }}>{slide.text}</Typography>
-                            <hr/>
+                            <hr />
                             <Typography variant="body1" sx={{ color: `${theme.palette.common.white}` }}>{slide.cta}</Typography>
                         </Grid>
 
@@ -129,6 +140,8 @@ const Home = () => {
                                     sx={{
                                         // 16:9
                                         pt: '56.25%',
+
+
                                     }}
                                     image={card.img}
                                 />
@@ -152,7 +165,28 @@ const Home = () => {
                     ))}
                 </Grid>
             </Container>
-
+            <Container sx={{bgcolor:'#f5f5f5', mt:4}} maxWidth="xl"> 
+            {data.map((data , index) =>(        
+                <Grid container spacing={2}  sx={{p:10,}} >             
+                    <Grid item xs={12} sm={6} md={6} >
+                        <StyledBox >
+                    <img src={data.img} alt="" style={{ height: '100%', width: '100%',  }}  />
+                        </StyledBox>
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={6} sx={{p:5}}>
+                        <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`,p:3 , }}>
+                          {data.heading}                  
+                        </Typography>
+                        <Typography sx={{py:3,p:3 ,fontSize:'20px' ,}} >
+                           {data.text}<br/>
+                        </Typography>
+                    </Grid>                 
+                </Grid>
+                  ))}      
+            </Container>
+            <Container sx={{mt:4}} maxWidth="xl"> 
+           
+            </Container>
         </>
     )
 }
