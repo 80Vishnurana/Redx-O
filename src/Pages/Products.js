@@ -1,64 +1,64 @@
 import React, { useState } from "react";
 import AllProducts from "../core/config/Products";
 import { Grid, Typography, Container, Card, CardContent, CardHeader, Box } from "@mui/material";
+import { FlippingPages } from 'flipping-pages';
+import 'flipping-pages/dist/style.css';
 import { useTheme } from '@mui/material/styles';
 import "./Products.css"; // Import the CSS file for styles
 
 const Products = () => {
     const theme = useTheme();
-    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selected, setSelected] = useState(0);
 
-    const handleCategorySelect = (category) => {
-        setSelectedCategory(category);
+    const back = () => {
+        setSelected(selected => Math.max(selected - 1, 0));
     };
+
+    const next = () => {
+        setSelected(selected => Math.min(selected + 1, 2));
+    };
+
+    const goToPage = (pageIndex) => {
+        setSelected(pageIndex);
+      };
 
     return (
         <>
             <Container sx={{ py: 8 }} maxWidth="lg">
                 <Grid container spacing={2}>
                     {/* Display all categories as cards */}
-                    <Grid item xs={2} md={2} sx={{
+                    <Grid item xs={12} md={12} sx={{
                         padding: '20px',
                     }}>
-                        <Typography variant="h5" sx={{ mb: 2 }}>Categories</Typography>
-                        {AllProducts.map(category => (
-                            <Card
-                                key={category.id}
-                                sx={{ cursor: 'pointer', mb: 2, backgroundColor: category === selectedCategory ? theme.palette.primary.main : 'inherit' }}
-                                onClick={() => handleCategorySelect(category)}
+                        <div className="pages">
+                            <FlippingPages
+                                direction="right-to-left"
+                                onSwipeEnd={setSelected}
+                                selected={selected}
                             >
-                                <CardContent>
-                                    <Typography variant="subtitle1" color={category === selectedCategory ? 'white' : 'text.primary'}>
-                                        {category.category}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </Grid>
-
-                    {/* Display products of the selected category */}
-                    <Grid item xs={10} md={10} className={`products-grid ${selectedCategory ? "selected" : ""}`}>
-                        {selectedCategory ? (
-                            <div>
-                                <Typography variant="h5" sx={{ mb: 2 }}>{selectedCategory.category} Products</Typography>
-                                <Grid container spacing={2}>
-                                    {selectedCategory.all.map(product => (
-                                        <Grid item key={product.name} xs={12} md={6}>
-                                            <Card>
-                                                <CardHeader title={product.name} />
-                                                <CardContent>
-                                                    <Typography>{product.description}</Typography>
-                                                </CardContent>
-                                            </Card>
-                                        </Grid>
+                                <div className="page page1">
+                                    {AllProducts.map(category => (
+                                        <Card
+                                            key={category.id}
+                                            sx={{ cursor: 'pointer', mb: 2}}
+                                            onClick={() => goToPage(2)}
+                                            
+                                        >
+                                            <CardContent>
+                                                <Typography variant="subtitle1">
+                                                    {category.category}
+                                                </Typography>
+                                            </CardContent>
+                                        </Card>
                                     ))}
-                                </Grid>
-                            </div>
-                        ) : (
-                            <Box sx={{ textAlign: 'center', mt: 4 }}>
-                                <Typography variant="h5">Please select a category</Typography>
-                            </Box>
-                        )}
+
+                                </div>
+                                <div className="page page2">Page 2</div>
+                                <div className="page page3">Page 3</div>
+                            </FlippingPages>
+                        </div>
+                        <button onClick={back}>Back</button>
+                        <button onClick={next}>Next</button>
                     </Grid>
                 </Grid>
             </Container>
