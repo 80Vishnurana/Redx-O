@@ -1,13 +1,19 @@
-import React from "react";
+import React   from "react";
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { Grid, Typography, Box, Stack } from "@mui/material";
+
+import { useTheme, styled, } from '@mui/material/styles';
+
 import { useTheme, styled } from '@mui/material/styles';
+
 import images from "../core/config/homePage/SliderImages";
 import cards from "../core/config/homePage/FeatureCards";
 import { section } from "../core/config/homePage/FeatureCards";
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -15,13 +21,26 @@ import Container from '@mui/material/Container';
 import data from "../core/config/homePage/whatWeDo";
 
 
+
 register();
 
 const Home = () => {
+    const swiperRef = useRef(null);
     const theme = useTheme();
     const swiperElRef = useRef(null);
+    const gradient = 'linear-gradient(45deg, #e3f2fd, #64b5f6)';
+    const handlePreviousButtonClick = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slidePrev();
+        }
 
+    };
+    const handleNextButtonClick = () => {
+        if (swiperRef.current) {
+            swiperRef.current.slideNext();
+        }
 
+    };
     useEffect(() => {
         swiperElRef.current.addEventListener('swiperprogress', (e) => {
             const [progress] = e.detail;
@@ -50,9 +69,8 @@ const Home = () => {
         },
     }));
     const StyledBox = styled(Box)(({ theme }) => ({
-        height:'450px',
-        width:'500px',
-        border:'1px solid red',
+
+        border: '1px solid red',
         '&:hover': {
             boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
             transform: 'scale(1.05)', // Increase size on hover
@@ -60,6 +78,15 @@ const Home = () => {
             transitionDuration: '0.5s',
         },
     }));
+
+    const StyledContainerBox = styled(Box)(({ theme }) => ({
+        '&:hover': {
+            boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
+            transform: 'scale(1.05)', // Increase size on hover
+            transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out', // Add a smooth transition effect
+        },
+    }));
+
 
     return (
         <>
@@ -165,27 +192,103 @@ const Home = () => {
                     ))}
                 </Grid>
             </Container>
-            <Container sx={{bgcolor:'#f5f5f5', mt:4}} maxWidth="xl"> 
-            {data.map((data , index) =>(        
-                <Grid container spacing={2}  sx={{p:10,}} >             
-                    <Grid item xs={12} sm={6} md={6} >
-                        <StyledBox >
-                    <img src={data.img} alt="" style={{ height: '100%', width: '100%',  }}  />
-                        </StyledBox>
+            <Container sx={{ bgcolor: '#f5f5f5', mt: { xs: 2, sm: 0, md: 4 } }} maxWidth="xl">
+                {data.map((data) => (
+                    <Grid container key={data} spacing={2} sx={{ p: { xs: 0, sm: 0, md: 10 }, py: { xs: 8, sm: 10, } }} >
+                        <Grid item xs={12} sm={6} md={6} lg={6} >
+
+                            <StyledBox sx={{
+                                height: { xs: '300px', sm: 'auto', md: '450px' },
+                                width: { md: 'auto', lg: '40vw' },
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }} >
+                                <img src={data.img} alt="" style={{ height: '100%', width: '100%', }} />
+                            </StyledBox>
+
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6} lg={6} sx={{ padding: { xs: 0, sm: 0, md: 5 } }}>
+                            <Box>
+                                <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, p: { xs: 2, sm: 1, md: 3 }, }}>
+                                    {data.heading}
+                                </Typography>
+                                <Typography sx={{ py: 3, p: { xs: 2, sm: 1, md: 3 }, fontSize: { xs: '17px', sm: '17px', md: '18px', lg: '20px' }, }} >
+                                    {data.text}<br />
+                                </Typography>
+                            </Box>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={6} md={6} sx={{p:5}}>
-                        <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`,p:3 , }}>
-                          {data.heading}                  
-                        </Typography>
-                        <Typography sx={{py:3,p:3 ,fontSize:'20px' ,}} >
-                           {data.text}<br/>
-                        </Typography>
-                    </Grid>                 
-                </Grid>
-                  ))}      
+                ))}
             </Container>
-            <Container sx={{mt:4}} maxWidth="xl"> 
-           
+            <Container sx={{ mt: 5, pb: 5 }} maxWidth="md">
+                <Grid container spacing={4} justifyContent="center">
+                    <Grid item xs={12}>
+                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2 }}>
+                            Testimonials
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <StyledContainerBox sx={{ backgroundImage: gradient, p: { xs: 3, md: 5 }, height: 'auto', borderRadius: 8 }}>
+                            <Swiper
+                               ref={(swiper) => (swiperRef.current = swiper)}
+                               onSwiper={(swiper) => (swiperRef.current = swiper)}
+                               spaceBetween={20}
+                               slidesPerView={1}
+                               loop={true}
+                               navigation={true}
+                               pagination={true}
+                           
+
+                            >
+                                {/* Swiper slides */}
+                                <SwiperSlide id="1">
+                                    <Box sx={{ height: { xs: 'auto', md: '300px' }, width: '100%' }}>
+                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
+                                            <img alt="" src="/home/quotation-mark.png" height="100%" width="100%" />
+                                        </Box>
+                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
+                                            We use cookies for the best user experience on our website, including to personalize content & offerings, to provide social media features and to analyze traffic. By clicking “Accept All Cookies” you agree to our use of cookies. You can also manage your cookies by clicking on the "Cookie Preferences" and selecting the categories you would like to accept. For more information on how we use cookies please visit our Cookies Policy and
+                                        </Typography>
+                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
+                                            Anndy Nallappan
+                                        </Typography>
+                                    </Box>
+                                </SwiperSlide>
+                                <SwiperSlide id="2" >
+                                    <Box sx={{ height: { xs: 'auto', md: '300px' }, width: '100%' }}>
+                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
+                                            <img alt="" src="/home/quotation-mark.png" height="100%" width="100%" />
+                                        </Box>
+                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
+                                            We use cookies for the best user experience on our website, including to personalize content & offerings, to provide social media features and to analyze traffic. By clicking “Accept All Cookies” you agree to our use of cookies. You can also manage your cookies by clicking on the "Cookie Preferences" and selecting the categories you would like to accept. For more information on how we use cookies please visit our Cookies Policy and
+                                        </Typography>
+                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
+                                            Anndy Nallappan
+                                        </Typography>
+                                    </Box>
+                                </SwiperSlide>
+                                <SwiperSlide id="3">
+                                    <Box sx={{ height: { xs: 'auto', md: '300px' }, width: '100%' }}>
+                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
+                                            <img alt="" src="/home/quotation-mark.png" height="100%" width="100%" />
+                                        </Box>
+                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
+                                            We use cookies for the best user experience on our website, including to personalize content & offerings, to provide social media features and to analyze traffic. By clicking “Accept All Cookies” you agree to our use of cookies. You can also manage your cookies by clicking on the "Cookie Preferences" and selecting the categories you would like to accept. For more information on how we use cookies please visit our Cookies Policy and
+                                        </Typography>
+                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
+                                            Anndy Nallappan
+                                        </Typography>
+                                    </Box>
+                                </SwiperSlide>
+                            </Swiper>
+                            <Box sx={{ marginTop: 'auto', display: 'flex', justifyContent: 'end', padding: 3 }}>
+                                <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold' }} onClick={handlePreviousButtonClick}>&lt;</Button>
+                                <Button variant="outlined" sx={{ fontSize: '20px', fontWeight: 'bold' }} onClick={handleNextButtonClick}>&gt;</Button>
+                            </Box>
+                        </StyledContainerBox>
+                    </Grid>
+                </Grid>
             </Container>
         </>
     )
