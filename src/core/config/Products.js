@@ -2,6 +2,7 @@ const AllProducts = [
     {
         id:1,
         category: 'Agricultural',
+        page:1,
         backgroundImage:'/features/valuechain.jpg',
         all:[
             {
@@ -33,6 +34,7 @@ const AllProducts = [
     {
         id:2,
         category: 'Agro Chemicals',
+        page:2,
         backgroundImage:'/features/ourbusiness.jpg',
         all:[
             {
@@ -64,6 +66,7 @@ const AllProducts = [
     {
         id:3,
         category: 'Industrial',
+        page:3,
         backgroundImage:'/features/sustainaibility.jpg',
         all:[
             {

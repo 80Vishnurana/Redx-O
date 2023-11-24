@@ -10,6 +10,8 @@
   width: 100%;
   user-select: none;
   touch-action: none;
+  background-image: url('/public/pagebackground.jpg');
+  background-size: cover;
 }
 
 .page1 {
