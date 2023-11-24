@@ -20,12 +20,12 @@ const Products = () => {
 
     const goToPage = (pageIndex) => {
         setSelected(pageIndex);
-      };
+    };
 
     return (
         <>
             <Container sx={{ py: 8 }} maxWidth="lg">
-                <Grid container spacing={2}>
+                <Grid container spacing={2} sx={{ padding: '50px' }}>
                     {/* Display all categories as cards */}
                     <Grid item xs={12} md={12} sx={{
                         padding: '20px',
@@ -35,22 +35,25 @@ const Products = () => {
                                 direction="right-to-left"
                                 onSwipeEnd={setSelected}
                                 selected={selected}
+                                animationDuration={100}
                             >
-                                <div className="page page1">
-                                    {AllProducts.map(category => (
-                                        <Card
-                                            key={category.id}
-                                            sx={{ cursor: 'pointer', mb: 2}}
-                                            onClick={() => goToPage(2)}
-                                            
-                                        >
-                                            <CardContent>
-                                                <Typography variant="subtitle1">
-                                                    {category.category}
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    ))}
+                                <div className="page">
+                                    <Grid container spacing={2} >
+                                        {AllProducts.map(category => (
+                                            <Grid item xs={12} md={6} lg={6}  key={category.id}>
+                                                <Card
+                                                    sx={{ cursor: 'pointer', mb: 2 }}
+                                                    onClick={() => goToPage(2)}>
+                                                    <CardContent>
+                                                        <Typography variant="subtitle1">
+                                                            {category.category}
+                                                        </Typography>
+                                                    </CardContent>
+                                                </Card>
+                                            </Grid>
+                                        ))}
+
+                                    </Grid>
 
                                 </div>
                                 <div className="page page2">Page 2</div>
