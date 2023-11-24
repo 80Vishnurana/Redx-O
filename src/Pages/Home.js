@@ -2,7 +2,11 @@ import React   from "react";
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { Grid, Typography, Box, Stack } from "@mui/material";
+
 import { useTheme, styled, } from '@mui/material/styles';
+
+import { useTheme, styled } from '@mui/material/styles';
+
 import images from "../core/config/homePage/SliderImages";
 import cards from "../core/config/homePage/FeatureCards";
 import { section } from "../core/config/homePage/FeatureCards";
