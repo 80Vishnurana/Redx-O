@@ -28,7 +28,7 @@ const StyledLinkButton = styled(Button)(({ theme }) => ({
   borderBottom: `3px solid transparent`, // Initially transparent border
   transition: 'border-color 0.3s ease-out', // Transition for smooth effect
   '&:hover': {
-    borderBottom: `5px solid ${theme.palette.highlight.default}`, // Change border color on hover
+    borderBottom: `2px solid ${theme.palette.highlight.default}`, // Change border color on hover
   },
 }));
 

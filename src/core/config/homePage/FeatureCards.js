@@ -51,6 +51,16 @@ export const section = {
         }
     ]
 }
+export const redx = {
+    title: 'About REDX',
+    content: "REDX is a dynamic company with a widespread international reach, operating seamlessly across various sectors. Our dedicated team is passionate about delivering excellence, consisting of individuals who bring diverse skills and expertise to the table.",
+    actions: [
+          {
+            action: 'Contact Us',
+            url:'/contact'
+        }
+    ]
+}
 
 
 export default cards;
