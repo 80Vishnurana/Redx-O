@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid, TextField, Typography, } from "@mui/material";
+import { Box, Button, Grid, TextField, Typography, } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -20,6 +20,12 @@ const Contact = () => {
   const theme = useTheme();
   return (
     <>
+    <Box>
+      <Typography variant="h2" sx={{display:'flex', justifyContent:'center', paddingTop:5, fontWeight:'bold' , color: `${theme.palette.primary.main}`}}>
+        Contact Us
+
+      </Typography>
+    </Box>
       <Container sx={{ py: 8 }} maxWidth="lg">
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
@@ -84,7 +90,7 @@ const Contact = () => {
                   />
                 </Grid>
               </Grid>
-              <Button size="large" variant="outlined" sx={{ my: 2, }}>Submit
+              <Button size="large" variant="outlined" sx={{ my: 2,}}>Submit
               </Button>
             </form>
           </Grid>
@@ -109,7 +115,7 @@ const Contact = () => {
                   {content.cont}
                   </Typography>
                   <Typography sx={{ color: `${theme.palette.common.text}` }}>
-                    {content.const}
+                  {content.const}
                   </Typography>
                   </>
                 )  )}
