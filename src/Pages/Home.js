@@ -238,11 +238,11 @@ const Home = () => {
                     </Grid>
                 ))}
             </Container>
-            <Container sx={{ mt: { xs: 2, sm: 0, md: 4 }, height: 'auto', paddingBottom: { xs: '100px', sm: '0' }, maxWidth: 'lg' }}>
+            <Container sx={{ mt: { xs: 2, sm: 0, md: 4 }, height: 'auto', paddingBottom: { xs: '100px', sm: '0' }, maxWidth: 'lg' }}>z
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <Box sx={{ my: { xs: 5, md: 10 }, }}>
-                            <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, pb: { xs: 3, md: 5 } }}>This Is Counters</Typography>
+                            <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, pb: { xs: 3, md: 5 } }}>This is Counters</Typography>
                             <Typography variant="h6" sx={{ fontSize: { xs: '14px', md: '16px' } }}>
                                 Professional HTML templates. Responsive, fully customizable with easy Drag-n-Drop Nicepage editor. Adjust colors, fonts, header and footer, layout, and other design elements, as well as content and images.
                             </Typography>
@@ -286,7 +286,6 @@ const Home = () => {
                                     <Grid item xs={12} sm={6} md={3} lg={3}>
                                         <StyledCountersBox >
                                             <Typography variant="h6" sx={{ pb: 2 }}>PROJECTS</Typography>
-                                            {/* <img src="/home/team.png" alt="" height={'80px'} width={'80px'} /> */}
                                             <Typography variant="h4">
                                                 {
                                                     counterStart && <CountUp start={0} end={150} duration={2} delay={0} />
@@ -310,7 +309,6 @@ const Home = () => {
                     </Grid>
                     <Grid item xs={12}>
                         <StyledContainerBox sx={{
-                            // backgroundImage: gradient,
                             backgroundColor: "white",
                             p: { xs: 3, md: 5 },
                             height: 'auto',
@@ -325,25 +323,23 @@ const Home = () => {
                                 loop={true}
                                 navigation={true}
                                 pagination={true}
-
-
                             >
-                               {Testimonials.map((slide, index) => (
-                                <SwiperSlide key={slide} id="1">
-                                    <Box sx={{ height: { xs: 'auto', md: '300px', }, width: '100%' }}>
-                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
-                                            <img alt="" src={slide.url} height="100%" width="100%" />
+                                {Testimonials.map((slide, index) => (
+                                    <SwiperSlide key={slide} id="1">
+                                        <Box sx={{ height: { xs: 'auto', md: '255px', }, width: '100%' }}>
+                                            <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
+                                                <img alt="" src={slide.url} height="100%" width="100%" />
+                                            </Box>
+                                            <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
+                                                {slide.text}
+                                            </Typography>
+                                            <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
+                                                {slide.Name}
+                                            </Typography>
                                         </Box>
-                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
-                                          {slide.text}
-                                        </Typography>
-                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
-                                           {slide.Name}
-                                        </Typography>
-                                    </Box>
-                                </SwiperSlide>
-                                    ))}
-                           </Swiper>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                             <Box sx={{ marginTop: 'auto', display: 'flex', justifyContent: 'end', padding: 3 }}>
                                 <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold' }} onClick={handlePreviousButtonClick}>&lt;</Button>
                                 <Button variant="outlined" sx={{ fontSize: '20px', fontWeight: 'bold' }} onClick={handleNextButtonClick}>&gt;</Button>
@@ -355,25 +351,25 @@ const Home = () => {
 
             <Container>
                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', p: { xs: 5, md: 10 }, justifyContent: { xs: 'center', md: 'space-between' } }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', mb: { xs: 3, md: 0 } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', fontSize: { xs: '20px' }, mb: { xs: 3, md: 0 } }}>
                         <Typography variant="h2" sx={{ fontWeight: 'bold', color: `${theme.palette.primary.main}`, mb: { xs: 2, md: 0 } }}>
                             REDX
                         </Typography>
-                        <Box sx={{ borderLeft: { xs: 'none', md: '2px solid red' }, ml: { xs: 0, md: 2 }, pl: { xs: 0, md: 2 } }}>
-                            <Typography variant="h4">
+                        <Box sx={{ borderLeft: '2px solid red', ml: { xs: 1, md: 2 }, pl: { xs: 1, md: 2 }, }}>
+                            <Typography variant="h4" sx={{ fontSize: { xs: '26px', md: '35px' } }}>
                                 SuperCharging
                             </Typography>
-                            <Typography variant="h4">
-                                Progress <sup style={{ fontSize: '15px' }}>TM</sup>
+                            <Typography variant="h4" sx={{ fontSize: { xs: '26px', md: '35px' } }}>
+                                Progress
                             </Typography>
                         </Box>
                     </Box>
-                   
+
                     {redx.actions.map((action, index) => (
-                    <StyledButton size="large"  href={action.url} >
-                   {action.action}
-                     </StyledButton>
-                       ))}
+                        <StyledButton size="large" href={action.url} >
+                            {action.action}
+                        </StyledButton>
+                    ))}
                 </Box>
             </Container>
 

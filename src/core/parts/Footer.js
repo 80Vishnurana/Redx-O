@@ -77,7 +77,7 @@ function Footer() {
               <Box sx={{ height: '22px', width: '25px', mr: 1, pt: '4px' }}>
                 <img src='/footer/telephone.png' alt='' height={'100%'} width={'100%'} />
               </Box>
-              <StyledTypography variant='h6'>  9876543021</StyledTypography>
+              <StyledTypography variant='h6'>9671872890</StyledTypography>
             </Box>
             <Box sx={{ display: "flex", py: 1 }}>
               <Box sx={{ height: '22px', width: '25px', mr: 1, pt: '4px' }}>
