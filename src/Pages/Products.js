@@ -1,16 +1,17 @@
 
 import React, { useState } from "react";
 import AllProducts from "../core/config/Products";
+import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import LabelIcon from '@mui/icons-material/Label';
-import { Grid, Typography, Container, Card, CardContent, CardHeader, Box } from "@mui/material";
+import { Grid, Typography, Container, Card, CardContent, CardHeader, CardMedia, Box } from "@mui/material";
 import { FlippingPages } from 'flipping-pages';
 import 'flipping-pages/dist/style.css';
-import { useTheme } from '@mui/material/styles';
+import { useTheme, styled } from '@mui/material/styles';
 import "./Products.css"; // Import the CSS file for styles
 import { CenterFocusStrong } from "@mui/icons-material";
 
@@ -29,6 +30,23 @@ const Products = () => {
     const goToPage = (pageIndex) => {
         setSelected(pageIndex);
     };
+    const StyledCard = styled(Card)(({ theme }) => ({
+        margin: "30px",
+        '&:hover': {
+            boxShadow: `0 10px 20px ${theme.palette.primary.main}50`, // Add a box shadow on hover
+            transform: 'scale(1.01)', // Increase size on hover
+            transition: '0.3s ease-in-out', // Add a smooth transition effect
+        },
+    }));
+    const StyledButton = styled(Button)(({ theme }) => ({
+        color: theme.palette.common.text,
+        border: `1px solid ${theme.palette.primary.main}`,
+        marginLeft: "20px",
+        '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.highlight.default
+        },
+    }));
 
     return (
         <>
@@ -71,20 +89,81 @@ const Products = () => {
                                             </List>
                                         </Grid>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ textAlign:"center", alignContent:"center", alignItems:"center"}}>
+                                            <Box sx={{ textAlign: "center", alignContent: "center", alignItems: "center" }}>
                                                 <img src="/allcategories.png" alt="All Categories" width={"70%"} />
                                             </Box>
                                         </Grid>
                                     </Grid>
 
                                 </div>
-                                <div className="page">
+                                <div container className="page" style={{ textAlign:"center"}}>
                                     <Typography variant="h4" sx={{ textAlign: "center", padding: "20px" }}>
                                         Agricultural Products
                                         <hr style={{ color: theme.palette.highlight.default, width: "30%" }} />
                                     </Typography>
-                                    <Grid container spacing={2}>
-                                        <Grid item xs={12} md={12} lg={12}>
+                                    <StyledButton size="large" onClick={() => goToPage(0)}>
+                                        Back to Categories
+                                    </StyledButton>
+                                    <Grid container>
+                                        <Grid item xs={12} md={6} lg={6}>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice Parboiled
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice Parboiled
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice Parboiled
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                        </Grid>
+                                        <Grid item xs={12} md={6} lg={6}>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice Parboiled
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice Parboiled
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
+                                            <StyledCard onClick={() => goToPage(2)}>
+                                                <CardContent>
+                                                    <Typography variant="h6">
+                                                        White Raw Rice Parboiled
+                                                    </Typography>
+                                                </CardContent>
+                                            </StyledCard>
 
                                         </Grid>
                                     </Grid>
