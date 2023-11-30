@@ -1,4 +1,4 @@
-const cards = [
+const counters = [
     {
         id: 1,
         heading: 'Value Chain',
@@ -36,31 +36,4 @@ const cards = [
         img: '/features/ourbusiness.jpg'
     }
 ];
-
-export const section = {
-    title: 'About REDX',
-    content: "REDX is a dynamic company with a widespread international reach, operating seamlessly across various sectors. Our dedicated team is passionate about delivering excellence, consisting of individuals who bring diverse skills and expertise to the table.",
-    actions: [
-        {
-            action: 'About Us',
-            url:'/about'
-        },
-        {
-            action: 'Contact Us',
-            url:'/contact'
-        }
-    ]
-}
-export const redx = {
-    title: 'About REDX',
-    content: "REDX is a dynamic company with a widespread international reach, operating seamlessly across various sectors. Our dedicated team is passionate about delivering excellence, consisting of individuals who bring diverse skills and expertise to the table.",
-    actions: [
-          {
-            action: 'Contact Us',
-            url:'/contact'
-        }
-    ]
-}
-
-
-export default cards;
+export default counters

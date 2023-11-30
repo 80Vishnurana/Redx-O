@@ -1,22 +1,23 @@
-import React   from "react";
+import React, { useState } from "react";
 import { useRef, useEffect } from 'react';
 import { register } from 'swiper/element/bundle';
 import { Grid, Typography, Box, Stack } from "@mui/material";
 import { useTheme, styled, } from '@mui/material/styles';
 import images from "../core/config/homePage/SliderImages";
-import cards from "../core/config/homePage/FeatureCards";
+import cards, { redx } from "../core/config/homePage/FeatureCards";
 import { section } from "../core/config/homePage/FeatureCards";
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import ScrollTrigger from 'react-scroll-trigger';
+import CountUp from 'react-countup';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import data from "../core/config/homePage/whatWeDo";
-
-
+import Testimonials from "../core/config/homePage/Testimonials";
 
 register();
 
@@ -24,7 +25,9 @@ const Home = () => {
     const swiperRef = useRef(null);
     const theme = useTheme();
     const swiperElRef = useRef(null);
-    const gradient = 'linear-gradient(45deg, #e3f2fd, #64b5f6)';
+    const gradient2 = 'linear-gradient(95deg, #e3f2fd, #ffebee)';
+    const gradient1 = 'linear-gradient(95deg, #e3f2fd, #bbdefb)';
+    const [counterStart, setCounterStart] = useState(false);
     const handlePreviousButtonClick = () => {
         if (swiperRef.current) {
             swiperRef.current.slidePrev();
@@ -76,6 +79,24 @@ const Home = () => {
     }));
 
     const StyledContainerBox = styled(Box)(({ theme }) => ({
+        '&:hover': {
+            boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
+            transform: 'scale(1.05)', // Increase size on hover
+            transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out', // Add a smooth transition effect
+        },
+    }));
+
+    const StyledCountersBox = styled(Box)(({ theme }) => ({
+        width: '100%',
+        height: '150px',
+        backgroundImage: gradient2,
+        borderRadius: '15px',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        fontWeight: 'bold',
+        alignItems: "center",
+        textAlign: 'center',
         '&:hover': {
             boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
             transform: 'scale(1.05)', // Increase size on hover
@@ -217,66 +238,107 @@ const Home = () => {
                     </Grid>
                 ))}
             </Container>
-            <Container sx={{ mt: 5, pb: 5 }} maxWidth="md">
-                <Grid container spacing={4} justifyContent="center">
+            <Container sx={{ mt: { xs: 2, sm: 0, md: 4 }, height: 'auto', paddingBottom: { xs: '100px', sm: '0' }, maxWidth: 'lg' }}>z
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <Box sx={{ my: { xs: 5, md: 10 }, }}>
+                            <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, pb: { xs: 3, md: 5 } }}>This is Counters</Typography>
+                            <Typography variant="h6" sx={{ fontSize: { xs: '14px', md: '16px' } }}>
+                                Professional HTML templates. Responsive, fully customizable with easy Drag-n-Drop Nicepage editor. Adjust colors, fonts, header and footer, layout, and other design elements, as well as content and images.
+                            </Typography>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Box sx={{ zIndex: '1', height: { xs: 'auto', md: '500px' } }}>
+                            <ScrollTrigger onEnter={() => setCounterStart(true)} onExit={() => setCounterStart(false)}>
+                                <Grid container spacing={4} sx={{ px: { xs: 2, md: 15 } }}>
+                                    <Grid item xs={12} sm={6} md={3} lg={3}>
+                                        <StyledCountersBox>
+                                            <Typography variant="h6" sx={{ pb: 2 }}>AWARDS WON</Typography>
+                                            <Typography variant="h4">
+                                                {
+                                                    counterStart && <CountUp start={0} end={19} duration={2} delay={0} />
+                                                }
+                                            </Typography>
+                                        </StyledCountersBox>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={3} lg={3}>
+                                        <StyledCountersBox >
+                                            <Typography variant="h6" sx={{ pb: 2 }}></Typography>
+                                            <Typography variant="h6" sx={{ pb: 2 }}>CLIENTS</Typography>
+                                            <Typography variant="h4">
+                                                {
+                                                    counterStart && <CountUp start={0} end={108} duration={2} delay={0} />
+                                                }
+                                            </Typography>
+                                        </StyledCountersBox>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={3} lg={3}>
+                                        <StyledCountersBox >
+                                            <Typography variant="h6" sx={{ pb: 2 }}>XP YEAR</Typography>
+                                            <Typography variant="h4">
+                                                {
+                                                    counterStart && <CountUp start={0} end={12} duration={2} delay={0} />
+                                                }+
+                                            </Typography>
+                                        </StyledCountersBox>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={3} lg={3}>
+                                        <StyledCountersBox >
+                                            <Typography variant="h6" sx={{ pb: 2 }}>PROJECTS</Typography>
+                                            <Typography variant="h4">
+                                                {
+                                                    counterStart && <CountUp start={0} end={150} duration={2} delay={0} />
+                                                }
+                                            </Typography>
+                                        </StyledCountersBox>
+                                    </Grid>
+                                </Grid>
+                                <Box sx={{ height: { xs: '200px', md: '300px' }, width: '100%', mt: { xs: -5, md: -10 }, zIndex: '-1', backgroundImage: 'url(/slides/slide1.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+                            </ScrollTrigger>
+                        </Box>
+                    </Grid>
+                </Grid>
+            </Container>
+            <Container sx={{ mt: 5, pb: 5, py: 10, backgroundImage: gradient1, display: "flex", justifyContent: "center" }} maxWidth="xl">
+                <Grid container spacing={4} maxWidth="md">
                     <Grid item xs={12}>
                         <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2 }}>
                             Testimonials
                         </Typography>
                     </Grid>
                     <Grid item xs={12}>
-                        <StyledContainerBox sx={{ backgroundImage: gradient, p: { xs: 3, md: 5 }, height: 'auto', borderRadius: 8 }}>
+                        <StyledContainerBox sx={{
+                            backgroundColor: "white",
+                            p: { xs: 3, md: 5 },
+                            height: 'auto',
+                            mb: 5,
+                            borderRadius: 8
+                        }}>
                             <Swiper
-                               ref={(swiper) => (swiperRef.current = swiper)}
-                               onSwiper={(swiper) => (swiperRef.current = swiper)}
-                               spaceBetween={20}
-                               slidesPerView={1}
-                               loop={true}
-                               navigation={true}
-                               pagination={true}
-                           
-
+                                ref={(swiper) => (swiperRef.current = swiper)}
+                                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                                spaceBetween={20}
+                                slidesPerView={1}
+                                loop={true}
+                                navigation={true}
+                                pagination={true}
                             >
-                                {/* Swiper slides */}
-                                <SwiperSlide id="1">
-                                    <Box sx={{ height: { xs: 'auto', md: '300px' }, width: '100%' }}>
-                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
-                                            <img alt="" src="/home/quotation-mark.png" height="100%" width="100%" />
+                                {Testimonials.map((slide, index) => (
+                                    <SwiperSlide key={slide} id="1">
+                                        <Box sx={{ height: { xs: 'auto', md: '255px', }, width: '100%' }}>
+                                            <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
+                                                <img alt="" src={slide.url} height="100%" width="100%" />
+                                            </Box>
+                                            <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
+                                                {slide.text}
+                                            </Typography>
+                                            <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
+                                                {slide.Name}
+                                            </Typography>
                                         </Box>
-                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
-                                            We use cookies for the best user experience on our website, including to personalize content & offerings, to provide social media features and to analyze traffic. By clicking “Accept All Cookies” you agree to our use of cookies. You can also manage your cookies by clicking on the "Cookie Preferences" and selecting the categories you would like to accept. For more information on how we use cookies please visit our Cookies Policy and
-                                        </Typography>
-                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
-                                            Anndy Nallappan
-                                        </Typography>
-                                    </Box>
-                                </SwiperSlide>
-                                <SwiperSlide id="2" >
-                                    <Box sx={{ height: { xs: 'auto', md: '300px' }, width: '100%' }}>
-                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
-                                            <img alt="" src="/home/quotation-mark.png" height="100%" width="100%" />
-                                        </Box>
-                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
-                                            We use cookies for the best user experience on our website, including to personalize content & offerings, to provide social media features and to analyze traffic. By clicking “Accept All Cookies” you agree to our use of cookies. You can also manage your cookies by clicking on the "Cookie Preferences" and selecting the categories you would like to accept. For more information on how we use cookies please visit our Cookies Policy and
-                                        </Typography>
-                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
-                                            Anndy Nallappan
-                                        </Typography>
-                                    </Box>
-                                </SwiperSlide>
-                                <SwiperSlide id="3">
-                                    <Box sx={{ height: { xs: 'auto', md: '300px' }, width: '100%' }}>
-                                        <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
-                                            <img alt="" src="/home/quotation-mark.png" height="100%" width="100%" />
-                                        </Box>
-                                        <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
-                                            We use cookies for the best user experience on our website, including to personalize content & offerings, to provide social media features and to analyze traffic. By clicking “Accept All Cookies” you agree to our use of cookies. You can also manage your cookies by clicking on the "Cookie Preferences" and selecting the categories you would like to accept. For more information on how we use cookies please visit our Cookies Policy and
-                                        </Typography>
-                                        <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
-                                            Anndy Nallappan
-                                        </Typography>
-                                    </Box>
-                                </SwiperSlide>
+                                    </SwiperSlide>
+                                ))}
                             </Swiper>
                             <Box sx={{ marginTop: 'auto', display: 'flex', justifyContent: 'end', padding: 3 }}>
                                 <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold' }} onClick={handlePreviousButtonClick}>&lt;</Button>
@@ -286,6 +348,31 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </Container>
+
+            <Container>
+                <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', p: { xs: 5, md: 10 }, justifyContent: { xs: 'center', md: 'space-between' } }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', fontSize: { xs: '20px' }, mb: { xs: 3, md: 0 } }}>
+                        <Typography variant="h2" sx={{ fontWeight: 'bold', color: `${theme.palette.primary.main}`, mb: { xs: 2, md: 0 } }}>
+                            REDX
+                        </Typography>
+                        <Box sx={{ borderLeft: '2px solid red', ml: { xs: 1, md: 2 }, pl: { xs: 1, md: 2 }, }}>
+                            <Typography variant="h4" sx={{ fontSize: { xs: '26px', md: '35px' } }}>
+                                SuperCharging
+                            </Typography>
+                            <Typography variant="h4" sx={{ fontSize: { xs: '26px', md: '35px' } }}>
+                                Progress
+                            </Typography>
+                        </Box>
+                    </Box>
+
+                    {redx.actions.map((action, index) => (
+                        <StyledButton size="large" href={action.url} >
+                            {action.action}
+                        </StyledButton>
+                    ))}
+                </Box>
+            </Container>
+
         </>
     )
 }
