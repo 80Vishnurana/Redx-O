@@ -28,7 +28,7 @@ const AllProducts = [
     {
         id:2,
         category: 'Agro Chemicals',
-        page:2,
+        page:10,
         backgroundImage:'/features/ourbusiness.jpg',
         all:[
             {
@@ -60,7 +60,7 @@ const AllProducts = [
     {
         id:3,
         category: 'Industrial',
-        page:3,
+        page:13,
         backgroundImage:'/features/sustainaibility.jpg',
         all:[
             {
@@ -87,6 +87,23 @@ const AllProducts = [
                 name:'Product',
                 description: 'This is a sample product description. This is a sample product description'
             }
+        ]
+    },
+    {
+        id:3,
+        category: 'Plywood',
+        page:19,
+        backgroundImage:'/features/sustainaibility.jpg',
+        all:[
+            {
+                name:'Product',
+                description: 'This is a sample product description. This is a sample product description'
+            },
+            {
+                name:'Product',
+                description: 'This is a sample product description. This is a sample product description'
+            },
+        
         ]
     }
 ]
