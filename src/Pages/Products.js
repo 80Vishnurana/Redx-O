@@ -103,7 +103,7 @@ const Products = () => {
                                     </Typography>
                                     <StyledButton size="large" onClick={() => goToPage(0)}>
                                         Back to Categories
-                                    </StyledButton>
+                                    </StyledButton>  
                                     <Grid container>
                                         <Grid item xs={12} md={6} lg={6}>
                                             <StyledCard onClick={() => goToPage(2)}>
