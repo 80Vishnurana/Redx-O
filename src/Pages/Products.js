@@ -52,10 +52,10 @@ const Products = () => {
     }));
 
     return (
-        <>
+        <div style={{ backgroundImage:`url(/productback.jpg)`, backgroundSize:'cover', backgroundPosition:'center center'}}>
             <Container sx={{ py: 8 }} maxWidth="lg">
                 <Grid>
-                    <Typography variant="h2" sx={{ textAlign: "center", color: theme.palette.primary.main, padding: "50px" }}>
+                    <Typography variant="h2" sx={{ textAlign: "center", color: theme.palette.primary.main, padding: "50px", fontWeight:"bold" }}>
                         Our Products
                     </Typography>
                 </Grid>
@@ -834,7 +834,7 @@ const Products = () => {
                     </Grid>
                 </Grid>
             </Container>
-        </>
+        </div>
     );
 }
 

@@ -238,7 +238,7 @@ const Home = () => {
                     </Grid>
                 ))}
             </Container>
-            <Container sx={{ mt: { xs: 2, sm: 0, md: 4 }, height: 'auto', paddingBottom: { xs: '100px', sm: '0' }, maxWidth: 'lg' }}>z
+            <Container sx={{ mt: { xs: 2, sm: 0, md: 4 }, height: 'auto', paddingBottom: { xs: '100px', sm: '0' }, maxWidth: 'lg' }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <Box sx={{ my: { xs: 5, md: 10 }, }}>
