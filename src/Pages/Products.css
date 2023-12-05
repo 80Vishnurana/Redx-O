@@ -1,7 +1,7 @@
 
 
 .pages {
-  height: 600px;
+  height: 700px;
   width: 100%;
 }
 
@@ -24,4 +24,10 @@
 
 .page3 {
   background-color: aqua;
+}
+
+@media only screen and (max-width: 767px) {
+  .pages {
+    height: 1400px;
+  }
 }
