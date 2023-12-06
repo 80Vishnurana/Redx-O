@@ -6,6 +6,10 @@ import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/system';
 import { navigationMenuItems, renderMenuItem } from './FooterQuikLink';
 import { Box, IconButton } from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 function Footer() {
   const theme = useTheme();
   const LogoImage = styled('img')({
@@ -25,6 +29,17 @@ function Footer() {
       borderBottom: `2px solid ${theme.palette.highlight.default}`, // Change border color on hover
     },
   });
+  const StyledBox = styled(Box)({
+    
+    borderBottom: `3px solid transparent`, // Initially transparent border
+    borderRadius: "5px",
+     pb: 0.5,
+    transition: 'border-color 0.3s ease-out', // Transition for smooth effect
+    '&:hover': {
+      borderBottom: `2px solid ${theme.palette.primary.main}`, // Change border color on hover
+    },
+  });
+
 
   return (
     <footer style={{ backgroundColor: theme.palette.navigation.default, padding: '40px 0', color: '#fff' }}>
@@ -44,6 +59,85 @@ function Footer() {
             }}>
               {theme.settings.name.default}
             </Typography>
+            <Box sx={{
+              pt: 3, letterSpacing: '10px', display: 'flex'
+            }}>
+              <StyledBox >
+                <a
+                
+                  href="https://www.instagram.com/accounts/login/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+
+                  <InstagramIcon sx={{
+                    fontSize: '35px',
+                    mx:1,
+                 
+                    transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out',
+                    '&:hover': {
+                      transform: 'scale(1.2)',
+                      boxShadow: `0 0 10px ${theme.palette.secondary.main}`,
+                    }
+                  }} />
+                </a>
+              </StyledBox>
+              <StyledBox>
+                <a
+                  href="https://twitter.com/i/flow/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+                  <TwitterIcon
+                    sx={{
+                      transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out',
+                      fontSize: '35px', 
+                      mx:1,
+                      '&:hover': {
+                        transform: 'scale(1.2)',
+                        boxShadow: `0 0 10px ${theme.palette.secondary.main}`,
+                      }
+                    }}
+                  />
+                </a>
+              </StyledBox>
+              <StyledBox>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+                  <FacebookIcon sx={{
+                    fontSize: '35px',mx:1,
+                    transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out',
+                    '&:hover': {
+                      transform: 'scale(1.2)',
+                      boxShadow: `0 0 10px ${theme.palette.secondary.main}`,
+                    }
+                  }} />
+                </a>
+              </StyledBox>
+              <StyledBox>
+                <a
+                  href="https://www.linkedin.com/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+                  <LinkedInIcon sx={{
+                    fontSize: '35px', mx:1,
+                    transition: 'transform 0.3s ease-out, box-shadow 0.3s ease-out',
+                    '&:hover': {
+                      transform: 'scale(1.2)',
+                      boxShadow: `0 0 10px ${theme.palette.secondary.main}`,
+                    }
+                  }} />
+                </a>
+              </StyledBox>
+            </Box>
           </Grid>
 
           {/* Second Section */}
