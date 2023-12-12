@@ -1,11 +1,12 @@
 import React from "react";
-import { Box, Button, Grid, TextField, Typography, } from "@mui/material";
+import {Button, Grid, TextField, Typography, } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Container from '@mui/material/Container';
 import contactCards from "../core/config/contactPage/contactCards";
 import styled from "@emotion/styled";
+
 
 const StyledCard = styled(Card)(({ theme }) => ({
   '&:hover': {
@@ -16,23 +17,23 @@ const StyledCard = styled(Card)(({ theme }) => ({
 }));
 
 
+
 const Contact = () => {
   const theme = useTheme();
   return (
     <>
-    <Box>
-      <Typography variant="h2" sx={{display:'flex', justifyContent:'center', paddingTop:5, fontWeight:'bold' , color: `${theme.palette.primary.main}`}}>
-        Contact Us
-
-      </Typography>
-    </Box>
-      <Container sx={{ py: 8 }} maxWidth="lg">
+      <div style={{ paddingTop: '100px', paddingBottom: '100px', backgroundColor: 'black', backgroundImage: 'url(/headerBack.jpg)', backgroundPosition: 'center center', backgroundSize: 'cover', width: '100%', textAlign: 'center' }}>
+        <Typography className="animate__animated animate__bounce" variant="h2" sx={{ color: `${theme.palette.common.white}`, fontWeight: 700 }}>
+          Contact Us
+        </Typography>
+      </div>
+      <Container sx={{ pb: 8 }} maxWidth="lg">
         <Grid container spacing={4}>
-          <Grid item xs={12} md={6}>
-            <img src="/contact/form.jpg" alt="Our Business" style={{ width: '100%', height: '100%', borderRadius: '30px' }} />
+          <Grid item xs={12} md={6} >
+            <img src="/contact/contact.jpg" alt="Our Business" className="animate__animated animate__rotateIn" style={{ width: '100%', height: '100%', borderRadius: '30px' }} />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <form style={{ border: '1px solid gray', padding: '20px', borderRadius: '10px' }}>
+          <Grid item xs={12} md={6}  sx={{mt:10}}>
+            <form style={{ border: '1px solid gray', padding: '20px', borderRadius: '10px', }}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <TextField
@@ -90,13 +91,13 @@ const Contact = () => {
                   />
                 </Grid>
               </Grid>
-              <Button size="large" variant="outlined" sx={{ my: 2,}}>Submit
+              <Button size="large" variant="outlined" sx={{ my: 2, }}>Submit
               </Button>
             </form>
           </Grid>
         </Grid>
       </Container>
-      <Container sx={{ py: 8 }} maxWidth="lg">
+      <Container sx={{ pb: 8 }} maxWidth="lg">
         <Grid container spacing={4}>
           {contactCards.map((card) => (
             <Grid item key={card} xs={12} sm={6} md={4}>
@@ -109,17 +110,17 @@ const Contact = () => {
                   <Typography gutterBottom variant="h5" component="h2" sx={{ color: `${theme.palette.primary.main}`, pt: 3, pb: 1 }}>
                     {card.heading}
                   </Typography>
-               
+
                   {card.content.map((content, index) => (<>
-                  <Typography sx={{ color: `${theme.palette.common.text}` }}>
-                  {content.cont}
-                  </Typography>
-                  <Typography sx={{ color: `${theme.palette.common.text}` }}>
-                  {content.const}
-                  </Typography>
+                    <Typography sx={{ color: `${theme.palette.common.text}` }}>
+                      {content.cont}
+                    </Typography>
+                    <Typography sx={{ color: `${theme.palette.common.text}` }}>
+                      {content.const}
+                    </Typography>
                   </>
-                )  )}
-              
+                  ))}
+
 
                 </CardContent>
               </StyledCard>
@@ -127,6 +128,9 @@ const Contact = () => {
           ))}
         </Grid>
 
+      </Container>
+      <Container sx={{py:5}}>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.8336794899974!2d77.06332957418007!3d28.604765975679918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b1ca4e425b3%3A0x9b3661bb9aab2b7f!2sBlue%20Brain%20Technologies%20Private%20Limited!5e0!3m2!1sen!2sin!4v1702382718543!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </Container>
     </>
   )

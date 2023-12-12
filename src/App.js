@@ -5,6 +5,7 @@ import RoutesComponent from './core/routes/routes';
 import MainLayout from './core/layouts/MainLayout';
 import theme from './core/config/ThemeConfig';
 import { ThemeProvider } from '@mui/material/styles';
+import 'animate.css';
 
 function App() {
   return (
