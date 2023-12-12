@@ -1,8 +1,8 @@
 const images = [
     {
-        url: "/slides/slide3.jpg",
-        text: "Innovative Solutions, Seamless Execution",
-        cta: "Elevate your experience with our cutting-edge solutions and flawless execution.",        
+        url: "/slides/agriculture.jpg",
+        text: "Agriculture",
+        cta: "Cultivating Trust, Harvesting Nutrition",        
     },
     {
         url: "/slides/slide2.jpg",

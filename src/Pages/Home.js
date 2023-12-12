@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/effect-fade';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 import CardActions from '@mui/material/CardActions';
@@ -107,37 +108,55 @@ const Home = () => {
 
     return (
         <>
-            <swiper-container
+            <Swiper
                 ref={swiperElRef}
-                slides-per-view="1"
-                navigation="true"
-                pagination="true"
-                speed="500" loop="true" effect="fade"
+                slidesPerView={1}
+                effect="fade"
+                speed={2000}
+                navigation={{ clickable: true }}
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                loop={true}
             >
                 {images.map((slide, index) => (
-                    <swiper-slide key={index} style={{
-                        height: '500px',
-                        backgroundImage: `url(${slide.url})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center center',
-                    }}>
-
-                        <Grid
-                            container
-                            direction="column"
-                            justifyContent="center"
-                            alignItems="center"
-                            style={{ height: '100%' }}
-                            padding={'50px'}
+                    <SwiperSlide key={index}>
+                        <div
+                            style={{
+                                height: '600px',
+                                backgroundImage: `url(${slide.url})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center center',
+                            }}
                         >
-                            <Typography variant="h3" sx={{ color: `${theme.palette.common.white}` }}>{slide.text}</Typography>
-                            <hr />
-                            <Typography variant="body1" sx={{ color: `${theme.palette.common.white}` }}>{slide.cta}</Typography>
-                        </Grid>
-
-                    </swiper-slide>
+                            <Grid
+                                container
+                                direction="column"
+                                justifyContent="center"
+                                alignItems="left"
+                                style={{ height: '100%' }}
+                                padding={'100px'}
+                            >
+                                <Typography
+                                    variant="h3"
+                                    sx={{
+                                        color: `${theme.palette.common.white}`,
+                                        fontWeight: 'bold',
+                                    }}
+                                >
+                                    {slide.text}
+                                </Typography>
+                                <hr />
+                                <Typography
+                                    variant="body1"
+                                    sx={{ color: `${theme.palette.common.white}` }}
+                                >
+                                    {slide.cta}
+                                </Typography>
+                            </Grid>
+                        </div>
+                    </SwiperSlide>
                 ))}
-            </swiper-container>
+            </Swiper>
             <Container sx={{ py: 8 }} maxWidth="lg">
                 <Box
                     sx={{
