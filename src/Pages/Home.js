@@ -29,7 +29,6 @@ const Home = () => {
     const theme = useTheme();
     const swiperElRef = useRef(null);
     const gradient2 = 'linear-gradient(95deg, #e3f2fd, #ffebee)';
-    const gradient1 = 'linear-gradient(95deg, #e3f2fd, #bbdefb)';
     const [counterStart, setCounterStart] = useState(false);
     const handlePreviousButtonClick = () => {
         if (swiperRef.current) {
@@ -82,11 +81,7 @@ const Home = () => {
     }));
 
     const StyledContainerBox = styled(Box)(({ theme }) => ({
-        '&:hover': {
-            boxShadow: `0 8px 16px ${theme.palette.primary.main}50`, // Add a box shadow on hover
-            transform: 'scale(1.05)', // Increase size on hover
-            transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out', // Add a smooth transition effect
-        },
+        
     }));
 
     const StyledCountersBox = styled(Box)(({ theme }) => ({
@@ -325,18 +320,18 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <Container sx={{ mt: 5, pb: 5, py: 10, backgroundImage: gradient1, display: "flex", justifyContent: "center" }} maxWidth="xl">
+            <Container sx={{ mt: 5, pb: 5, py: 10, backgroundImage: "url('/testimonials.jpg')", display: "flex", justifyContent: "center", backgroundAttachment:'fixed', }} maxWidth="xl">
                 <Grid container spacing={4} maxWidth="md">
                     <Grid item xs={12}>
                   
-                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2 }} className="animate__animated animate__bounce ">
+                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2, fontWeight:'bold' }} className="animate__animated animate__bounce ">
                             Testimonials
                         </Typography>
                  
                     </Grid>
                     <Grid item xs={12}>
                         <StyledContainerBox sx={{
-                            backgroundColor: "white",
+                            backgroundColor: 'transparent',
                             p: { xs: 3, md: 5 },
                             height: 'auto',
                             mb: 5,
@@ -357,10 +352,10 @@ const Home = () => {
                                             <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
                                                 <img alt="" src={slide.url} height="100%" width="100%" />
                                             </Box>
-                                            <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px' } }}>
+                                            <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px',color: `${theme.palette.common.white}` } }}>
                                                 {slide.text}
                                             </Typography>
-                                            <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.primary.main}` }}>
+                                            <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.common.white}` }}>
                                                 {slide.Name}
                                             </Typography>
                                         </Box>
@@ -368,8 +363,8 @@ const Home = () => {
                                 ))}
                             </Swiper>
                             <Box sx={{ marginTop: 'auto', display: 'flex', justifyContent: 'end', padding: 3 }}>
-                                <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold' }} onClick={handlePreviousButtonClick}>&lt;</Button>
-                                <Button variant="outlined" sx={{ fontSize: '20px', fontWeight: 'bold' }} onClick={handleNextButtonClick}>&gt;</Button>
+                                <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold', color:`${theme.palette.common.white}`,borderColor:`${theme.palette.common.white}`  }} onClick={handlePreviousButtonClick}>&lt;</Button>
+                                <Button variant="outlined" sx={{ fontSize: '20px', fontWeight: 'bold', color:`${theme.palette.common.white}`, borderColor:`${theme.palette.common.white}` }} onClick={handleNextButtonClick}>&gt;</Button>
                             </Box>
                         </StyledContainerBox>
                     </Grid>
