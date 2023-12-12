@@ -1,11 +1,18 @@
 import React from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
+import 'animate.css';
 
 const About = () => {
     const theme = useTheme();
     return (
         <>
+            <div style={{ paddingTop:'100px',paddingBottom:'100px', backgroundColor:'black',backgroundImage:'url(/headerBack.jpg)',backgroundPosition:'center center', backgroundSize:'cover', width:'100%', textAlign:'center' }}>
+                <Typography className="animate__animated animate__bounce" variant="h2" sx={{ color: `${theme.palette.common.white}`, fontWeight: 700 }}>
+                    About Us
+                </Typography>
+            </div>
+
             <Container sx={{ py: 8 }} maxWidth="lg">
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>

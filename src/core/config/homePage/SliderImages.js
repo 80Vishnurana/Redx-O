@@ -5,14 +5,14 @@ const images = [
         cta: "Cultivating Trust, Harvesting Nutrition",        
     },
     {
-        url: "/slides/slide2.jpg",
-        text: "Green by Design: Sustainability in Every Step",
-        cta: "Embrace a sustainable future with our eco-conscious practices embedded in every aspect of our business.",
+        url: "/slides/agriInput.jpg",
+        text: "Agri Input",
+        cta: "Enabling farmers to feed the planet.",
     },
     {
         url: "/slides/slide1.jpg",
-        text: "Beyond Business: Cultivating Excellence",
-        cta: "Experience excellence that goes beyond transactions, fostering the well-being of our people and communities.",
+        text: "Food Grains",
+        cta: "Driven By Innovation, Delivering on quality.",
     },
 
 ];

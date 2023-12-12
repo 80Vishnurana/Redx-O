@@ -19,6 +19,8 @@ import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import data from "../core/config/homePage/whatWeDo";
 import Testimonials from "../core/config/homePage/Testimonials";
+import 'animate.css';
+
 
 register();
 
@@ -142,6 +144,8 @@ const Home = () => {
                                         color: `${theme.palette.common.white}`,
                                         fontWeight: 'bold',
                                     }}
+                                    className="animate__animated animate__bounce"
+                                    
                                 >
                                     {slide.text}
                                 </Typography>
@@ -149,6 +153,7 @@ const Home = () => {
                                 <Typography
                                     variant="body1"
                                     sx={{ color: `${theme.palette.common.white}` }}
+                                    className="animate__animated animate__bounce animate__delay-1s"
                                 >
                                     {slide.cta}
                                 </Typography>
@@ -172,6 +177,7 @@ const Home = () => {
                             align="center"
                             color="text.primary"
                             gutterBottom
+                            className="animate__animated animate__bounce"
                         >
                             {section.title}
                         </Typography>
@@ -322,7 +328,7 @@ const Home = () => {
             <Container sx={{ mt: 5, pb: 5, py: 10, backgroundImage: gradient1, display: "flex", justifyContent: "center" }} maxWidth="xl">
                 <Grid container spacing={4} maxWidth="md">
                     <Grid item xs={12}>
-                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2 }}>
+                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2 }} className="animate__animated animate__bounce">
                             Testimonials
                         </Typography>
                     </Grid>
