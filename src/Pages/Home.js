@@ -17,7 +17,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import data from "../core/config/homePage/whatWeDo";
-// import "./portfolio.css"
 import Testimonials from "../core/config/homePage/Testimonials";
 import 'animate.css';
 
@@ -102,8 +101,6 @@ const Home = () => {
             transition: 'box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out', // Add a smooth transition effect
         },
     }));
-
-
     return (
         <>
             <Swiper

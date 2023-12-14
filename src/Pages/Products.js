@@ -48,11 +48,11 @@ const Products = () => {
         <div style={{ backgroundImage: `url(/productback.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center center' }}>
             <div style={{ paddingTop: '100px', paddingBottom: '100px', backgroundColor: 'black', backgroundImage: 'url(/headerBack.jpg)', backgroundPosition: 'center center', backgroundSize: 'cover', width: '100%', textAlign: 'center' }}>
                 <Typography className="animate__animated animate__bounce" variant="h2" sx={{ color: `${theme.palette.common.white}`, fontWeight: 700 }}>
-                Our Products
+                    Our Products
                 </Typography>
             </div>
             <Container sx={{ py: 8 }} maxWidth="lg">
-              <Grid container spacing={2}>
+                <Grid container spacing={2}>
                     <Grid item xs={12} md={12}>
                         <Box className="pages">
                             <FlippingPages
@@ -183,7 +183,7 @@ const Products = () => {
 
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/whiterawrice.jpeg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -214,7 +214,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/whitericeparboiled.jpeg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -243,7 +243,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/icumsa45.jpeg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -272,7 +272,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%' , pt: 3}}>
                                                 <img src="/products/icumsa100.webp" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -302,8 +302,8 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
-                                                <img src="/products/icumsa150.jpeg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
+                                                <img src="/products/icumsa-150.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px', }} />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} md={6} lg={6}>
@@ -332,7 +332,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/rawcashewnuts.webp" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -361,8 +361,17 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
-                                                <img src="/products/blackpepper500.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
+                                                <img
+                                                    src="/products/blackpepper500.jpg"
+                                                    alt=""
+                                                    style={{
+                                                        objectFit: 'cover',
+                                                        height: '100%',
+                                                        width: '100%',
+                                                        borderRadius: '20px'
+                                                    }}
+                                                />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} md={6} lg={6}>
@@ -390,7 +399,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3, }}>
                                                 <img src="/products/blackpepper550.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -451,7 +460,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%',pt: 3, }}>
                                                 <img src="/products/nitrogen.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -480,8 +489,13 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
-                                                <img src="/products/ureagranular.webp" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
+                                            <Box sx={{ height: '350px', pt: 3,  width:'100%' }}>
+                                                <img src="/products/urea.jpg" alt=""   style={{
+                                                        objectFit: 'cover',
+                                                        borderRadius: '20px',
+                                                        width:'100%',
+                                                        height:'100%'
+                                                    }} />
                                             </Box>
                                         </Grid>
                                         <Grid item xs={12} md={6} lg={6}>
@@ -564,7 +578,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/pvcresin.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -594,7 +608,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/pvcresin.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -624,7 +638,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/pvcresin.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -653,7 +667,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/pvcresin.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -682,7 +696,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/melaminepowder.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -698,10 +712,6 @@ const Products = () => {
                                         </Grid>
                                     </Grid>
                                 </StyledBox>
-                                {/* ................................................................ */}
-
-
-
                                 <Box container className="page page19" style={{ textAlign: "center" }}>
                                     <Typography variant="h4" sx={{ textAlign: "center", padding: "20px" }}>
                                         Plywood
@@ -719,7 +729,6 @@ const Products = () => {
                                                     </Typography>
                                                 </CardContent>
                                             </StyledCard>
-
                                         </Grid>
                                         <Grid item xs={12} md={6} lg={6}>
                                             <StyledCard onClick={() => goToPage(21)}>
@@ -732,7 +741,6 @@ const Products = () => {
                                         </Grid>
                                     </Grid>
                                 </Box>
-
                                 <StyledBox className="page page20">
                                     <Typography variant="h4" sx={{ textAlign: "center", padding: "20px" }}>
                                         Furniture Grade
@@ -746,7 +754,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%' }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/furnituregradeplywood.jpg" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -775,7 +783,7 @@ const Products = () => {
                                     </StyledButton>
                                     <Grid container spacing={2} sx={{ p: 4, pt: 8 }}>
                                         <Grid item xs={12} md={6} lg={6}>
-                                            <Box sx={{ height: '350px', width: '100%', }}>
+                                            <Box sx={{ height: '350px', width: '100%', pt: 3 }}>
                                                 <img src="/products/packinggradeplywood.webp" alt="" height={'100%'} width={'100%'} style={{ borderRadius: '20px' }} />
                                             </Box>
                                         </Grid>
@@ -791,7 +799,6 @@ const Products = () => {
                                         </Grid>
                                     </Grid>
                                 </StyledBox>
-
                             </FlippingPages>
                         </Box>
                     </Grid>
