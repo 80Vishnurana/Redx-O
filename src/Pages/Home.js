@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useRef, useEffect } from 'react';
-import { register } from 'swiper/element/bundle';
 import { Grid, Typography, Box, Stack } from "@mui/material";
 import { useTheme, styled, } from '@mui/material/styles';
 import images from "../core/config/homePage/SliderImages";
@@ -18,13 +17,15 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Container from '@mui/material/Container';
 import data from "../core/config/homePage/whatWeDo";
+// import "./portfolio.css"
 import Testimonials from "../core/config/homePage/Testimonials";
 import 'animate.css';
 
 
-register();
 
 const Home = () => {
+
+ 
     const swiperRef = useRef(null);
     const theme = useTheme();
     const swiperElRef = useRef(null);
@@ -233,7 +234,6 @@ const Home = () => {
                 {data.map((data) => (
                     <Grid container key={data} spacing={2} sx={{ p: { xs: 0, sm: 0, md: 10 }, py: { xs: 8, sm: 10, } }} >
                         <Grid item xs={12} sm={6} md={6} lg={6} >
-
                             <StyledBox sx={{
                                 height: { xs: '300px', sm: 'auto', md: '450px' },
                                 width: { md: 'auto', lg: '40vw' },
@@ -243,7 +243,6 @@ const Home = () => {
                             }} >
                                 <img src={data.img} alt="" style={{ height: '100%', width: '100%', }} />
                             </StyledBox>
-
                         </Grid>
                         <Grid item xs={12} sm={6} md={6} lg={6} sx={{ padding: { xs: 0, sm: 0, md: 5 } }}>
                             <Box>
@@ -327,7 +326,6 @@ const Home = () => {
                         <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2, fontWeight:'bold' }} className="animate__animated animate__bounce ">
                             Testimonials
                         </Typography>
-                 
                     </Grid>
                     <Grid item xs={12}>
                         <StyledContainerBox sx={{
@@ -348,16 +346,26 @@ const Home = () => {
                             >
                                 {Testimonials.map((slide, index) => (
                                     <SwiperSlide key={slide} id="1">
-                                        <Box sx={{ height: { xs: 'auto', md: '255px', }, width: '100%' }}>
+                                        <Box sx={{ height: { xs: 'auto', md: '300px',  }, width: '100%' }}>
                                             <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
                                                 <img alt="" src={slide.url} height="100%" width="100%" />
                                             </Box>
+                                            <Box>
                                             <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px',color: `${theme.palette.common.white}` } }}>
                                                 {slide.text}
                                             </Typography>
+                                            </Box>
+                                            <Box sx={{display:'flex', mt:3 }}>
+                                            
+                                            <Box  sx={{display:'flex', height:'80px', width:'100px' ,bgcolor:'white' ,mx:2}}>
+                                                <img src="/home/passport.jpg" alt="##" height="100%" width="100% " />
+                                           </Box>
+                                           <Box>
                                             <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.common.white}` }}>
                                                 {slide.Name}
                                             </Typography>
+                                           </Box>
+                                            </Box>
                                         </Box>
                                     </SwiperSlide>
                                 ))}
@@ -370,7 +378,6 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </Container>
-
             <Container>
                 <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', p: { xs: 5, md: 10 }, justifyContent: { xs: 'center', md: 'space-between' } }}>
                     <Box sx={{ display: 'flex', alignItems: 'center', fontSize: { xs: '20px' }, mb: { xs: 3, md: 0 } }}>
@@ -386,7 +393,6 @@ const Home = () => {
                             </Typography>
                         </Box>
                     </Box>
-
                     {redx.actions.map((action, index) => (
                         <StyledButton size="large" href={action.url} >
                             {action.action}

@@ -60,6 +60,7 @@ const About = () => {
         </Grid>
 
         {/* Vision Section */}
+        
         <Grid item xs={12} md={6}>
           <Box sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', height: { xs: 'auto', md: '450px' } }}>
             <img src="/features/vission.jpg" alt="Our Vision" style={{ width: '80%', height: '100%', borderRadius: 12 }} />
@@ -89,8 +90,9 @@ const About = () => {
             </div>
           </Box>
         </Grid>
-
+        
         {/* Additional Mission Section */}
+
         <Grid item xs={12} md={6} sx={{ mt: 3, mb: 3 }}>
           <Box
             sx={{
