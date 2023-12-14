@@ -10,6 +10,7 @@
     "@react-google-maps/api": "^2.19.2",
     "animate.css": "^4.1.1",
     "flipping-pages": "^3.1.0",
+    "framer-motion": "^10.16.16",
     "material-icons": "^1.13.12",
     "react": "latest",
     "react-countup": "^6.5.0",
