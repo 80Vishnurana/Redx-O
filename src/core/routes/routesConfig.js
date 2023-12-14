@@ -8,6 +8,7 @@ const Products = lazy(() => import('../../Pages/Products'))
 const ValueChain = lazy(() => import('../../Pages/Features/ValueChain'))
 const Sustainability = lazy(() => import('../../Pages/Features/Sustainability'))
 const OurBusiness = lazy(() => import('../../Pages/Features/OurBusiness'))
+const Gallery = lazy(() => import('../../Pages/Gallery'))
 
 const routesConfig = [
   {
@@ -25,6 +26,10 @@ const routesConfig = [
   {
     path:'/products',
     element: <Products/>
+  },
+  {
+    path:'/gallery',
+    element:<Gallery/>
   },
   {
     path:'/about/value-chain',

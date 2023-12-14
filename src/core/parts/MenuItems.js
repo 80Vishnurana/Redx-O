@@ -10,6 +10,7 @@ export const navigationMenuItems = [
   { label: 'Home', link: '/' },
   { label: 'About', link: '/about' },
   { label: 'Products', link: '/products' },
+  { label: 'Gallery', link: '/gallery'},
   { label: 'Contact', link: '/contact' },
 ];
 
