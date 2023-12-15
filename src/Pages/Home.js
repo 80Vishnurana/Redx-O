@@ -343,7 +343,7 @@ const Home = () => {
                             >
                                 {Testimonials.map((slide, index) => (
                                     <SwiperSlide key={slide} id="1">
-                                        <Box sx={{ height: { xs: 'auto', md: '300px',  }, width: '100%' }}>
+                                        <Box sx={{ height: { xs: 'auto', md: 'auto',  }, width: '100%' }}>
                                             <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
                                                 <img alt="" src={slide.url} height="100%" width="100%" />
                                             </Box>
@@ -354,9 +354,9 @@ const Home = () => {
                                             </Box>
                                             <Box sx={{display:'flex', mt:3 }}>
                                             
-                                            <Box  sx={{display:'flex', height:'80px', width:'100px' ,bgcolor:'white' ,mx:2}}>
-                                                <img src="/home/passport.jpg" alt="##" height="100%" width="100% " />
-                                           </Box>
+                                            <Box sx={{ display: 'flex', height: '100px', width: '120px', bgcolor: 'white', mx: 2, borderRadius: '8px', overflow: 'hidden' }}>
+                                                    <img src="/home/passport.jpg" alt="##" width="100% " />
+                                                </Box>
                                            <Box>
                                             <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.common.white}` }}>
                                                 {slide.Name}
