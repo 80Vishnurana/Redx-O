@@ -1,0 +1,7 @@
+.compact-product-card {
+    width: 80%; /* Adjust the width to your preference */
+    margin: 8px; /* Adjust the margin for spacing between compact cards */
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+  }
