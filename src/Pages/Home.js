@@ -19,6 +19,7 @@ import Container from '@mui/material/Container';
 import data from "../core/config/homePage/whatWeDo";
 import Testimonials from "../core/config/homePage/Testimonials";
 import 'animate.css';
+import StarIcon from '@mui/icons-material/Star';
 
 
 
@@ -107,12 +108,13 @@ const Home = () => {
                 ref={swiperElRef}
                 slidesPerView={1}
                 effect="fade"
-                speed={2000}
+                speed={1000}
                 navigation={{ clickable: true }}
                 pagination={{ clickable: true }}
-                autoplay={{ delay: 4000, disableOnInteraction: false }}
+                autoplay={{ delay: 2000, disableOnInteraction: false }}
                 loop={true}
             >
+                
                 {images.map((slide, index) => (
                     <SwiperSlide key={index}>
                         <div
@@ -129,7 +131,7 @@ const Home = () => {
                                 justifyContent="center"
                                 alignItems="left"
                                 style={{ height: '100%' }}
-                                padding={'100px'}
+                                padding={{  xs:'80px', sm:'80px', md: 4, lg: 8 }}
                             >
                                 <Typography
                                     variant="h3"
@@ -231,15 +233,15 @@ const Home = () => {
                 {data.map((data) => (
                     <Grid container key={data} spacing={2} sx={{ p: { xs: 0, sm: 0, md: 10 }, py: { xs: 8, sm: 10, } }} >
                         <Grid item xs={12} sm={6} md={6} lg={6} >
-                            <StyledBox sx={{
+                            <Box sx={{
                                 height: { xs: '300px', sm: 'auto', md: '450px' },
                                 width: { md: 'auto', lg: '40vw' },
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }} >
-                                <img src={data.img} alt="" style={{ height: '100%', width: '100%', }} />
-                            </StyledBox>
+                                <img src={data.img} alt="" style={{ width: '100%', boxShadow:"10px 10px grey" }}/>
+                            </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6} lg={6} sx={{ padding: { xs: 0, sm: 0, md: 5 } }}>
                             <Box>
@@ -258,9 +260,9 @@ const Home = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <Box sx={{ my: { xs: 5, md: 10 }, }}>
-                            <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, pb: { xs: 3, md: 5 } }}>This is Counters</Typography>
+                            <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, pb: { xs: 3, md: 5 } }}>Our Business in Numbers</Typography>
                             <Typography variant="h6" sx={{ fontSize: { xs: '14px', md: '16px' } }}>
-                                Professional HTML templates. Responsive, fully customizable with easy Drag-n-Drop Nicepage editor. Adjust colors, fonts, header and footer, layout, and other design elements, as well as content and images.
+                            We pride ourselves on our extensive product range, spanning across 21 categories that include agricultural commodities, processed Agri products, Agri Inputs, Industrial Chemicals, and FMCG food products.
                             </Typography>
                         </Box>
                     </Grid>
@@ -301,7 +303,7 @@ const Home = () => {
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={3} lg={3}>
                                         <StyledCountersBox >
-                                            <Typography variant="h6" sx={{ pb: 2 }}>PROJECTS</Typography>
+                                            <Typography variant="h6" sx={{ pb: 2 }}>Products</Typography>
                                             <Typography variant="h4">
                                                 {
                                                     counterStart && <CountUp start={0} end={150} duration={2} delay={0} />
@@ -328,7 +330,7 @@ const Home = () => {
                         <StyledContainerBox sx={{
                             backgroundColor: 'transparent',
                             p: { xs: 3, md: 5 },
-                            height: 'auto',
+                            height: '50vh',
                             mb: 5,
                             borderRadius: 8
                         }}>
@@ -354,13 +356,20 @@ const Home = () => {
                                             </Box>
                                             <Box sx={{display:'flex', mt:3 }}>
                                             
-                                            <Box sx={{ display: 'flex', height: '100px', width: '120px', bgcolor: 'white', mx: 2, borderRadius: '8px', overflow: 'hidden' }}>
+                                            <Box sx={{ display: 'flex', height: '100px', width: '120px', bgcolor: 'white',mx:{ xs:0, lg:2 },mr:{ xs:2}, borderRadius: '8px', overflow: 'hidden' }}>
                                                     <img src="/home/passport.jpg" alt="##" width="100% " />
                                                 </Box>
                                            <Box>
-                                            <Typography variant="h4" sx={{ pt: 2, color: `${theme.palette.common.white}` }}>
+                                           <Typography variant="h4" sx={{ pt: 2,fontSize:{xs:'22px',lg:'30px'}, color: `${theme.palette.common.white}` }}>
                                                 {slide.Name}
                                             </Typography>
+                                                <Box sx={{pt:0.5}} >
+                                                    <StarIcon sx={{color:'orange'}}/>
+                                                    <StarIcon sx={{color:'orange'}}/>
+                                                    <StarIcon sx={{color:'orange'}}/>
+                                                    <StarIcon sx={{color:'orange'}}/>
+                                                    <StarIcon sx={{color:'orange'}}/>
+                                                </Box>
                                            </Box>
                                             </Box>
                                         </Box>

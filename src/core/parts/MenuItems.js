@@ -5,7 +5,6 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom';
 import { styled } from '@mui/system';
 
-
 export const navigationMenuItems = [
   { label: 'Home', link: '/' },
   { label: 'About', link: '/about' },
@@ -34,6 +33,13 @@ const StyledLinkButton = styled(Button)(({ theme }) => ({
 }));
 
 export const renderMenuItem = (item, onClick) => (
+  <StyledMenuItem key={item.label} onClick={onClick}>
+    <StyledLinkButton component={Link} to={item.link}>
+      <Typography textAlign="center">{item.label}</Typography>
+    </StyledLinkButton>
+  </StyledMenuItem>
+);
+export const renderLogoItem = (item, onClick) => (
   <StyledMenuItem key={item.label} onClick={onClick}>
     <StyledLinkButton component={Link} to={item.link}>
       <Typography textAlign="center">{item.label}</Typography>

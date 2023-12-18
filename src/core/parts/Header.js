@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import { styled } from '@mui/system';
+import { Link } from 'react-router-dom';
 
 import { navigationMenuItems, renderMenuItem } from './MenuItems';
 
@@ -39,12 +40,15 @@ function ResponsiveAppBar() {
     <AppBar position="static" style={{ backgroundColor: theme.palette.navigation.default }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters style={{ display: 'flex', height: theme.settings.navHeight.default }}>
-          <LogoImage src="/redxlogo.png" alt="Logo" />
-
+          <Link to="/">
+            {/* Wrap LogoImage with Link component */}
+            <LogoImage src="/redxlogo.png" alt="Logo" />
+          </Link>
           <Typography
             variant="h4"
             noWrap
-            component="a"
+            component={Link} // Use Link component for the text as well
+            to="/"
             sx={{
               mr: 2,
               flexGrow: 1,
@@ -54,8 +58,8 @@ function ResponsiveAppBar() {
               color: `${theme.palette.secondary.main}`,
               textDecoration: 'none',
             }}
-          >
-            {theme.settings.name.default}
+          >          
+            {theme.settings.name.default}    
           </Typography>
 
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
