@@ -8,8 +8,11 @@ import { section } from "../core/config/homePage/FeatureCards";
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import ScrollTrigger from 'react-scroll-trigger';
 import CountUp from 'react-countup';
 import CardActions from '@mui/material/CardActions';
@@ -105,14 +108,15 @@ const Home = () => {
     return (
         <>
             <Swiper
-                ref={swiperElRef}
-                slidesPerView={1}
-                effect="fade"
-                speed={1000}
-                navigation={{ clickable: true }}
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 2000, disableOnInteraction: false }}
-                loop={true}
+            ref={swiperElRef}
+            spaceBetween={30}
+            effect={'fade'}
+            navigation={true}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[EffectFade, Navigation, Pagination]}
+            loop="true"
             >
                 
                 {images.map((slide, index) => (
