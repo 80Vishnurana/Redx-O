@@ -133,7 +133,7 @@ const Products = () => {
                         animationDuration={120}
                        
                     >
-                        <Box className="page"  sx={{ boxShadow:5 ,m:1, }}>
+                        <Box className="page">
                             <Grid container spacing={2} sx={{px:3,}}>
                                 <Grid item xs={12} md={6} lg={6}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
@@ -149,7 +149,7 @@ const Products = () => {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}}>
+                        <Box className="page">
                             <Grid container spacing={2}sx={{pl:3,}} >
                                 <Grid item xs={12} md={12} lg={12}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
@@ -167,7 +167,7 @@ const Products = () => {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1,}}>
+                        <Box className="page" >
                             <Grid container spacing={2} sx={{pl:3,}} >
                                 <Grid item xs={12} md={12} lg={12} >
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
@@ -185,7 +185,7 @@ const Products = () => {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}}>
+                        <Box className="page">
                             <Grid container spacing={2} sx={{pl:3,}} >
                                 <Grid item xs={12} md={12} lg={12}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
@@ -203,7 +203,7 @@ const Products = () => {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}}>
+                        <Box className="page">
                             <Grid container spacing={2} sx={{pl:3,}} >
                                 <Grid item xs={12} md={12} lg={12}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
@@ -221,119 +221,119 @@ const Products = () => {
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}}>
+                        <Box className="page">
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[0])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page"  sx={{ boxShadow:5,m:1}}>
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[1])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page"  sx={{ boxShadow:5,m:1}}>
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[2])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[3])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[4])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[5])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[6])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgriculturalProducts[7])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgroProducts[0])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(AgroProducts[1])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(IndustrialProducts[0])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(IndustrialProducts[1])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(IndustrialProducts[2])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(IndustrialProducts[3])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(IndustrialProducts[4])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page"  sx={{ boxShadow:5,m:1}}>
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(PlywoodProducts[0])}
                                 </Grid>
                             </Grid>
                         </Box>
-                        <Box className="page" sx={{ boxShadow:5,m:1}} >
+                        <Box className="page" >
                             <Grid container spacing={2}>
                                 <Grid item xs={12} md={12}>
                                     {ProductDescription(PlywoodProducts[1])}
