@@ -343,8 +343,8 @@ const Home = () => {
                                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                                 spaceBetween={20}
                                 slidesPerView={1}
-                                loop={true}
-                                navigation={true}
+                                loop="true"
+                                // navigation={true}
                                 pagination={true}
                             >
                                 {Testimonials.map((slide, index) => (
