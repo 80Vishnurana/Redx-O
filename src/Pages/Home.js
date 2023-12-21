@@ -8,8 +8,9 @@ import { section } from "../core/config/homePage/FeatureCards";
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -115,8 +116,9 @@ const Home = () => {
             pagination={{
               clickable: true,
             }}
-            modules={[EffectFade, Navigation, Pagination]}
+            modules={[EffectFade, Navigation, Pagination , Autoplay]}
             loop="true"
+            autoplay={true}
             >
                 
                 {images.map((slide, index) => (
@@ -343,6 +345,8 @@ const Home = () => {
                                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                                 spaceBetween={20}
                                 slidesPerView={1}
+                                modules={[ Autoplay]}
+                                autoplay={true}
                                 loop="true"
                                 // navigation={true}
                                 pagination={true}
@@ -359,7 +363,6 @@ const Home = () => {
                                             </Typography>
                                             </Box>
                                             <Box sx={{display:'flex', mt:3 }}>
-                                            
                                             <Box sx={{ display: 'flex', height: '100px', width: '120px', bgcolor: 'white',mx:{ xs:0, lg:2 },mr:{ xs:2}, borderRadius: '8px', overflow: 'hidden' }}>
                                                     <img src="/home/passport.jpg" alt="##" width="100% " />
                                                 </Box>
