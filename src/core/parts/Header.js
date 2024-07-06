@@ -58,8 +58,8 @@ function ResponsiveAppBar() {
               color: `${theme.palette.secondary.main}`,
               textDecoration: 'none',
             }}
-          >          
-            {theme.settings.name.default}    
+          >
+            {theme.settings.name.default}
           </Typography>
 
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>

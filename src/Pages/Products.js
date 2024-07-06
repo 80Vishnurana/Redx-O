@@ -6,7 +6,7 @@ import { FlippingPages } from 'flipping-pages';
 import ProductCard from "../core/components/ProductCard";
 import { ProductDescription } from "../core/components/ProductCard";
 import 'flipping-pages/dist/style.css';
-import { useTheme,} from '@mui/material/styles';
+import { useTheme, } from '@mui/material/styles';
 import "./Products.css"; // Import the CSS file for styles
 
 const Products = () => {
@@ -124,17 +124,17 @@ const Products = () => {
                 </Grid>
             </Container>
 
-            <Container sx={{ py: 2 , }} maxWidth="lg">
+            <Container sx={{ py: 2, }} maxWidth="lg">
                 <Box className="pages">
                     <FlippingPages
                         direction="right-to-left"
                         onSwipeEnd={setSelected}
                         selected={selected}
                         animationDuration={120}
-                       
+
                     >
                         <Box className="page">
-                            <Grid container spacing={2} sx={{px:3,}}>
+                            <Grid container spacing={2} sx={{ px: 3, }}>
                                 <Grid item xs={12} md={6} lg={6}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
                                         Welcome To Redx.
@@ -150,14 +150,14 @@ const Products = () => {
                             </Grid>
                         </Box>
                         <Box className="page">
-                            <Grid container spacing={2}sx={{pl:3,}} >
+                            <Grid container spacing={2} sx={{ pl: 3, }} >
                                 <Grid item xs={12} md={12} lg={12}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
                                         Agricultural Products
                                         <hr style={{ color: theme.palette.highlight.default, width: "50%", marginLeft: 0 }}></hr>
                                     </Typography>
 
-                                    <Grid container sx={{ paddingRight: "50px" ,  }}>
+                                    <Grid container sx={{ paddingRight: "50px", }}>
                                         {AgriculturalProducts.map(product => (
                                             <Grid item xs={6} md={2}>
                                                 {ProductCard(product)}
@@ -168,7 +168,7 @@ const Products = () => {
                             </Grid>
                         </Box>
                         <Box className="page" >
-                            <Grid container spacing={2} sx={{pl:3,}} >
+                            <Grid container spacing={2} sx={{ pl: 3, }} >
                                 <Grid item xs={12} md={12} lg={12} >
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
                                         Agro Chemicals
@@ -186,7 +186,7 @@ const Products = () => {
                             </Grid>
                         </Box>
                         <Box className="page">
-                            <Grid container spacing={2} sx={{pl:3,}} >
+                            <Grid container spacing={2} sx={{ pl: 3, }} >
                                 <Grid item xs={12} md={12} lg={12}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
                                         Industrial Products
@@ -204,14 +204,14 @@ const Products = () => {
                             </Grid>
                         </Box>
                         <Box className="page">
-                            <Grid container spacing={2} sx={{pl:3,}} >
+                            <Grid container spacing={2} sx={{ pl: 3, }} >
                                 <Grid item xs={12} md={12} lg={12}>
                                     <Typography variant="h5" sx={{ paddingTop: "50px" }}>
                                         Plywood Products
                                         <hr style={{ color: theme.palette.highlight.default, width: "50%", marginLeft: 0 }}></hr>
                                     </Typography>
 
-                                    <Grid container sx={{ paddingRight:{xs:'0px', md:'30px',lg:'50px'} }}>
+                                    <Grid container sx={{ paddingRight: { xs: '0px', md: '30px', lg: '50px' } }}>
                                         {PlywoodProducts.map(product => (
                                             <Grid item xs={6} md={2}>
                                                 {ProductCard(product)}
@@ -353,7 +353,7 @@ const Products = () => {
                         onClick={back}
                         sx={{ textTransform: 'none' }}
                     >
-                    Previous Page
+                        Previous Page
                     </Button>
                     <Button
                         variant="contained"
@@ -361,7 +361,7 @@ const Products = () => {
                         onClick={next}
                         sx={{ textTransform: 'none' }}
                     >
-                    Next Page
+                        Next Page
                     </Button>
                 </Box>
             </Container>
@@ -371,3 +371,152 @@ const Products = () => {
 
 export default Products;
 
+
+
+
+
+
+
+
+
+//  <Container fluid className="py-2">
+//             <Row>
+//                 <Col xs={12} md={12}>
+//                     <div className="d-flex justify-content-center gap-2">
+//                         {/* Category Selection Button */}
+//                         <Button
+//                             variant="contained"
+//                             color="primary"
+//                             onClick={handleCategoryMenuOpen}
+//                             style={{ textTransform: 'none' }}
+//                         >
+//                             {selectedCategory ? selectedCategory.name : 'Select Category'}
+//                         </Button>
+
+//                         {/* Product Selection Button */}
+//                         <Button
+//                             variant="contained"
+//                             color="secondary"
+//                             onClick={handleProductMenuOpen}
+//                             disabled={!selectedCategory}
+//                             style={{ textTransform: 'none' }}
+//                         >
+//                             {selectedProduct ? selectedProduct.name : 'Select Product'}
+//                         </Button>
+
+//                         {/* Category Selection Dropdown */}
+//                         <Dropdown show={categoryAnchorEl} onClose={handleCategoryMenuClose}>
+//                             <Dropdown.Toggle variant="success" id="dropdown-basic">
+//                                 Select Category
+//                             </Dropdown.Toggle>
+//                             <Dropdown.Menu>
+//                                 {categories.map(category => (
+//                                     <Dropdown.Item key={category.id} onClick={() => handleCategorySelect(category)}>
+//                                         {category.name}
+//                                     </Dropdown.Item>
+//                                 ))}
+//                             </Dropdown.Menu>
+//                         </Dropdown>
+
+//                         {/* Product Selection Dropdown */}
+//                         <Dropdown show={productAnchorEl} onClose={handleProductMenuClose}>
+//                             <Dropdown.Toggle variant="success" id="dropdown-basic">
+//                                 Select Product
+//                             </Dropdown.Toggle>
+//                             <Dropdown.Menu>
+//                                 {selectedCategory &&
+//                                     selectedCategory.products.map(product => (
+//                                         <Dropdown.Item key={product.id} onClick={() => handleProductSelect(product)}>
+//                                             {product.name}
+//                                         </Dropdown.Item>
+//                                     ))}
+//                             </Dropdown.Menu>
+//                         </Dropdown>
+//                     </div>
+//                 </Col>
+//             </Row>
+//         </Container> 
+
+
+{/* <Container fluid className="py-2">
+            <Row>
+                <Col xs={12} md={12}>
+                    <div className="pages">
+                        <FlippingPages
+                            direction="right-to-left"
+                            onSwipeEnd={setSelected}
+                            selected={selected}
+                            animationDuration={120}
+                        > */}
+
+//                         <Container fluid className="py-2">
+//       <Row>
+//         <Col xs={12} md={6} lg={6}>
+//           <Card className="page" style={{ padding: "20px" }}>
+//             <Card.Title variant="h5" style={{ paddingTop: "50px" }}>
+//               Welcome To Redx.
+//               <hr style={{ color: theme.palette.highlight.default, width: "50%", marginLeft: 0 }} />
+//             </Card.Title>
+//             <Card.Subtitle variant="h6">Please Select a category and a Product to see details.</Card.Subtitle>
+//             <Card.Text style={{ textAlign: "center" }}>
+//               We pride ourselves on our extensive product range, spanning across 21 categories that include agricultural commodities, processed Agri products, Agri Inputs, Industrial Chemicals, and FMCG food products.
+//             </Card.Text>
+//           </Card>
+//         </Col>
+//       </Row>
+//     </Container>
+
+// <Container fluid className="py-2">
+// <Row>
+//   <Col xs={12} md={12} lg={12}>
+//     <Card className="page" style={{ paddingLeft: "30px" }}>
+//       <Card.Title variant="h5" style={{ paddingTop: "50px" }}>
+//         Agricultural Products
+//         <hr style={{ color: theme.palette.highlight.default, width: "50%", marginLeft: 0 }} />
+//       </Card.Title>
+
+//       <Row style={{ paddingRight: "50px" }}>
+//         {AgriculturalProducts.map(product => (
+//           <Col key={product.id} xs={6} md={2}>
+//             {ProductCard(product)}
+//           </Col>
+//         ))}
+//       </Row>
+//     </Card>
+//   </Col>
+// </Row>
+// </Container>
+
+
+
+
+
+
+
+
+
+// <Container fluid className="py-2">
+//     <Row>
+//         <Col xs={12} md={12}>
+//             <div className="d-flex justify-content-center gap-2">
+//                 {/* Previous Page Button */}
+//                 <Button
+//                     variant="primary"
+//                     onClick={back}
+//                     style={{ textTransform: 'none' }}
+//                 >
+//                     Previous Page
+//                 </Button>
+
+//                 {/* Next Page Button */}
+//                 <Button
+//                     variant="secondary"
+//                     onClick={next}
+//                     style={{ textTransform: 'none' }}
+//                 >
+//                     Next Page
+//                 </Button>
+//             </div>
+//         </Col>
+//     </Row>
+// </Container>

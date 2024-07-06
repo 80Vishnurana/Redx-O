@@ -40,6 +40,9 @@ const Gallery = () => {
                             alt="gallery redx"
                         />
                     ))}
+                    <Typography sx={{color:`${theme.palette.common.black}`}}>
+                            bnszcnow
+                    </Typography>
                 </Masonry>
             </Container>
         </>

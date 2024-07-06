@@ -48,7 +48,8 @@ const theme = createTheme({
     },
     common: {
       white: '#ffffff',
-      text: '#000000'
+      text: '#000000',
+      red:'#ab003c'
     }
   },
   settings: {

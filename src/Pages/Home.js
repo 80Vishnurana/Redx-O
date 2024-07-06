@@ -29,7 +29,7 @@ import StarIcon from '@mui/icons-material/Star';
 
 const Home = () => {
 
- 
+
     const swiperRef = useRef(null);
     const theme = useTheme();
     const swiperElRef = useRef(null);
@@ -86,7 +86,7 @@ const Home = () => {
     }));
 
     const StyledContainerBox = styled(Box)(({ theme }) => ({
-        
+
     }));
 
     const StyledCountersBox = styled(Box)(({ theme }) => ({
@@ -109,18 +109,18 @@ const Home = () => {
     return (
         <>
             <Swiper
-            ref={swiperElRef}
-            spaceBetween={30}
-            effect={'fade'}
-            navigation={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[EffectFade, Navigation, Pagination , Autoplay]}
-            loop="true"
-            autoplay={true}
+                ref={swiperElRef}
+                spaceBetween={30}
+                effect={'fade'}
+                navigation={true}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[EffectFade, Navigation, Pagination, Autoplay]}
+                loop="true"
+                autoplay={true}
             >
-                
+
                 {images.map((slide, index) => (
                     <SwiperSlide key={index}>
                         <div
@@ -137,7 +137,7 @@ const Home = () => {
                                 justifyContent="center"
                                 alignItems="left"
                                 style={{ height: '100%' }}
-                                padding={{  xs:'80px', sm:'80px', md: 4, lg: 8 }}
+                                padding={{ xs: '80px', sm: '80px', md: 4, lg: 8 }}
                             >
                                 <Typography
                                     variant="h3"
@@ -146,7 +146,7 @@ const Home = () => {
                                         fontWeight: 'bold',
                                     }}
                                     className="animate__animated animate__bounce"
-                                    
+
                                 >
                                     {slide.text}
                                 </Typography>
@@ -246,7 +246,7 @@ const Home = () => {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }} >
-                                <img src={data.img} alt="" style={{ width: '100%', boxShadow:"10px 10px grey" }}/>
+                                <img src={data.img} alt="" style={{ width: '100%', boxShadow: "10px 10px grey" }} />
                             </Box>
                         </Grid>
                         <Grid item xs={12} sm={6} md={6} lg={6} sx={{ padding: { xs: 0, sm: 0, md: 5 } }}>
@@ -268,7 +268,7 @@ const Home = () => {
                         <Box sx={{ my: { xs: 5, md: 10 }, }}>
                             <Typography variant="h4" sx={{ color: `${theme.palette.primary.main}`, pb: { xs: 3, md: 5 } }}>Our Business in Numbers</Typography>
                             <Typography variant="h6" sx={{ fontSize: { xs: '14px', md: '16px' } }}>
-                            We pride ourselves on our extensive product range, spanning across 21 categories that include agricultural commodities, processed Agri products, Agri Inputs, Industrial Chemicals, and FMCG food products.
+                                We pride ourselves on our extensive product range, spanning across 21 categories that include agricultural commodities, processed Agri products, Agri Inputs, Industrial Chemicals, and FMCG food products.
                             </Typography>
                         </Box>
                     </Grid>
@@ -279,7 +279,8 @@ const Home = () => {
                                     <Grid item xs={12} sm={6} md={3} lg={3}>
                                         <StyledCountersBox>
                                             <Typography variant="h6" sx={{ pb: 2 }}>AWARDS WON</Typography>
-                                            <Typography variant="h4">
+                                            <Typography variant="h4
+                                            ">
                                                 {
                                                     counterStart && <CountUp start={0} end={19} duration={2} delay={0} />
                                                 }
@@ -290,7 +291,8 @@ const Home = () => {
                                         <StyledCountersBox >
                                             <Typography variant="h6" sx={{ pb: 2 }}></Typography>
                                             <Typography variant="h6" sx={{ pb: 2 }}>CLIENTS</Typography>
-                                            <Typography variant="h4">
+                                            <Typography variant="h4
+                                            ">
                                                 {
                                                     counterStart && <CountUp start={0} end={108} duration={2} delay={0} />
                                                 }
@@ -300,7 +302,8 @@ const Home = () => {
                                     <Grid item xs={12} sm={6} md={3} lg={3}>
                                         <StyledCountersBox >
                                             <Typography variant="h6" sx={{ pb: 2 }}>XP YEAR</Typography>
-                                            <Typography variant="h4">
+                                            <Typography variant="h4
+                                            ">
                                                 {
                                                     counterStart && <CountUp start={0} end={12} duration={2} delay={0} />
                                                 }+
@@ -310,7 +313,8 @@ const Home = () => {
                                     <Grid item xs={12} sm={6} md={3} lg={3}>
                                         <StyledCountersBox >
                                             <Typography variant="h6" sx={{ pb: 2 }}>Products</Typography>
-                                            <Typography variant="h4">
+                                            <Typography variant="h4
+                                            ">
                                                 {
                                                     counterStart && <CountUp start={0} end={150} duration={2} delay={0} />
                                                 }
@@ -324,11 +328,11 @@ const Home = () => {
                     </Grid>
                 </Grid>
             </Container>
-            <Container sx={{ mt: 5, pb: 5, py: 10, backgroundImage: "url('/testimonials.jpg')", display: "flex", justifyContent: "center", backgroundAttachment:'fixed', }} maxWidth="xl">
+            <Container sx={{ mt: 5, pb: 5, py: 10, backgroundImage: "url('/testimonials.jpg')", display: "flex", justifyContent: "center", backgroundAttachment: 'fixed', }} maxWidth="xl">
                 <Grid container spacing={4} maxWidth="md">
                     <Grid item xs={12}>
-                  
-                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2, fontWeight:'bold' }} className="animate__animated animate__bounce ">
+
+                        <Typography variant="h3" sx={{ textAlign: 'center', color: `${theme.palette.primary.main}`, pb: 2, fontWeight: 'bold' }} className="animate__animated animate__bounce ">
                             Testimonials
                         </Typography>
                     </Grid>
@@ -345,7 +349,7 @@ const Home = () => {
                                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                                 spaceBetween={20}
                                 slidesPerView={1}
-                                modules={[ Autoplay]}
+                                modules={[Autoplay]}
                                 autoplay={true}
                                 loop="true"
                                 // navigation={true}
@@ -353,39 +357,39 @@ const Home = () => {
                             >
                                 {Testimonials.map((slide, index) => (
                                     <SwiperSlide key={slide} id="1">
-                                        <Box sx={{ height: { xs: 'auto', md: 'auto',  }, width: '100%' }}>
+                                        <Box sx={{ height: { xs: 'auto', md: 'auto', }, width: '100%' }}>
                                             <Box sx={{ height: '70px', width: '80px', pb: 2 }}>
                                                 <img alt="" src={slide.url} height="100%" width="100%" />
                                             </Box>
                                             <Box>
-                                            <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px',color: `${theme.palette.common.white}` } }}>
-                                                {slide.text}
-                                            </Typography>
+                                                <Typography variant="body1" sx={{ fontSize: { xs: '14px', md: '18px', color: `${theme.palette.common.white}` } }}>
+                                                    {slide.text}
+                                                </Typography>
                                             </Box>
-                                            <Box sx={{display:'flex', mt:3 }}>
-                                            <Box sx={{ display: 'flex', height: '100px', width: '120px', bgcolor: 'white',mx:{ xs:0, lg:2 },mr:{ xs:2}, borderRadius: '8px', overflow: 'hidden' }}>
+                                            <Box sx={{ display: 'flex', mt: 3 }}>
+                                                <Box sx={{ display: 'flex', height: '100px', width: '120px', bgcolor: 'white', mx: { xs: 0, lg: 2 }, mr: { xs: 2 }, borderRadius: '8px', overflow: 'hidden' }}>
                                                     <img src="/home/passport.jpg" alt="##" width="100% " />
                                                 </Box>
-                                           <Box>
-                                           <Typography variant="h4" sx={{ pt: 2,fontSize:{xs:'22px',lg:'30px'}, color: `${theme.palette.common.white}` }}>
-                                                {slide.Name}
-                                            </Typography>
-                                                <Box sx={{pt:0.5}} >
-                                                    <StarIcon sx={{color:'orange'}}/>
-                                                    <StarIcon sx={{color:'orange'}}/>
-                                                    <StarIcon sx={{color:'orange'}}/>
-                                                    <StarIcon sx={{color:'orange'}}/>
-                                                    <StarIcon sx={{color:'orange'}}/>
+                                                <Box>
+                                                    <Typography variant="h4" sx={{ pt: 2, fontSize: { xs: '22px', lg: '30px' }, color: `${theme.palette.common.white}` }}>
+                                                        {slide.Name}
+                                                    </Typography>
+                                                    <Box sx={{ pt: 0.5 }} >
+                                                        <StarIcon sx={{ color: 'orange' }} />
+                                                        <StarIcon sx={{ color: 'orange' }} />
+                                                        <StarIcon sx={{ color: 'orange' }} />
+                                                        <StarIcon sx={{ color: 'orange' }} />
+                                                        <StarIcon sx={{ color: 'orange' }} />
+                                                    </Box>
                                                 </Box>
-                                           </Box>
                                             </Box>
                                         </Box>
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
                             <Box sx={{ marginTop: 'auto', display: 'flex', justifyContent: 'end', padding: 3 }}>
-                                <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold', color:`${theme.palette.common.white}`,borderColor:`${theme.palette.common.white}`  }} onClick={handlePreviousButtonClick}>&lt;</Button>
-                                <Button variant="outlined" sx={{ fontSize: '20px', fontWeight: 'bold', color:`${theme.palette.common.white}`, borderColor:`${theme.palette.common.white}` }} onClick={handleNextButtonClick}>&gt;</Button>
+                                <Button variant="outlined" sx={{ mr: 2, fontSize: '20px', fontWeight: 'bold', color: `${theme.palette.common.white}`, borderColor: `${theme.palette.common.white}` }} onClick={handlePreviousButtonClick}>&lt;</Button>
+                                <Button variant="outlined" sx={{ fontSize: '20px', fontWeight: 'bold', color: `${theme.palette.common.white}`, borderColor: `${theme.palette.common.white}` }} onClick={handleNextButtonClick}>&gt;</Button>
                             </Box>
                         </StyledContainerBox>
                     </Grid>
